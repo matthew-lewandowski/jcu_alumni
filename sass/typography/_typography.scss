@@ -4,10 +4,14 @@ input,
 select,
 optgroup,
 textarea {
-	color: $color__text-main;
-	font-family: $font__open_sans;
-	@include font-size(1);
-	line-height: $font__line-height-body;
+  color: $color__text-main;
+  font-family: $font__open_sans;
+  @include font-size(1);
+  line-height: $font__line-height-body;
+
+  @media screen and (max-device-width: 374px) and (orientation: portrait) {
+    @include font-size(.9)
+  }
 }
 
 @import "headings";
