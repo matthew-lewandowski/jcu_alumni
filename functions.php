@@ -120,6 +120,9 @@ add_action( 'widgets_init', 'jcu_alumni_widgets_init' );
  * Enqueue scripts and styles.
  */
 function jcu_alumni_scripts() {
+    //Enqueue Google Fonts: Sourse Open Sans
+    wp_enqueue_style('jcu_alumni-fonts', 'https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700&display=swap');
+
 	wp_enqueue_style( 'jcu_alumni-style', get_stylesheet_uri() );
 
 	wp_enqueue_script( 'jcu_alumni-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true );
