@@ -1,0 +1,47 @@
+
+.site-header {
+  position: relative;
+  display: flex;
+  justify-content: space-between;
+  padding: 1em;
+  font-family: $font__open_sans;
+  color: $color__text;
+  background-color: $color__background-header;
+
+  @media screen and (min-width: $query_small) {
+    padding: 1em 2em;
+  }
+}
+
+.site-branding {
+  min-height: 65px;
+  width: 35%;
+}
+
+.site-title {
+  margin: 0;
+  padding: 0;
+  font-size: 1.6em;
+  font-weight: 900;
+  line-height: 1em;
+
+  a {
+    color: $color__text;
+    text-decoration: none;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.site-description {
+  margin: 0;
+  font-size: .9em;
+  font-style: italic;
+  font-weight: 100;
+}
+.main-navigation {
+  width: 55%;
+}
