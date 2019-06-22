@@ -57,8 +57,10 @@
             ?>
         </nav><!-- #site-navigation -->
     </header><!-- #masthead -->
-    <figure class="header-image">
-        <?php the_header_image_tag(); ?>
-    </figure><!-- #header-image -->
+    <?php if (get_header_image() && is_front_page()) : //this will only display header image on front page ?>
+        <figure class="header-image">
+            <?php the_header_image_tag(); ?>
+        </figure><!-- #header-image -->
+    <?php endif; //End header image check. ?>
 
     <div id="content" class="site-content">
