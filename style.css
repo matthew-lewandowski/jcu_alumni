@@ -705,6 +705,7 @@ a:hover, a:active {
 	}
 	.main-navigation ul {
 		display: block;
+		float: right;
 	}
 }
 
@@ -891,6 +892,8 @@ a:hover, a:active {
 	width: 100%;
 	display: -ms-flexbox;
 	display: flex;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
 	-ms-flex-pack: justify;
 	    justify-content: space-between;
 }
@@ -899,6 +902,8 @@ a:hover, a:active {
 	min-height: 65px;
 	display: -ms-flexbox;
 	display: flex;
+	-ms-flex: 1 0 auto;
+	    flex: 1 0 auto;
 	width: 20%;
 }
 
@@ -947,13 +952,19 @@ a:hover, a:active {
 }
 
 .main-navigation {
-	width: 80%;
 	display: -ms-flexbox;
 	display: flex;
 	-ms-flex-direction: column;
 	    flex-direction: column;
 	-ms-flex-pack: center;
 	    justify-content: center;
+	width: 20%;
+}
+
+@media screen and (min-width: 769px) {
+	.main-navigation {
+		width: 80%;
+	}
 }
 
 /*--------------------------------------------------------------
