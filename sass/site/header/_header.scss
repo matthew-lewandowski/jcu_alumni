@@ -1,4 +1,4 @@
-.header-image{
+.header-image {
   background-size: cover;
   background-position: center center;
   overflow: hidden;
@@ -11,11 +11,12 @@
     }
   }
 }
+
 .site-header {
   position: relative;
-  display: flex;
-  justify-content: space-between;
-  padding: 1em;
+  display: block;
+  width: 92%;
+  margin: 0 auto;
   font-family: $font__open_sans;
   color: $color__text;
   background-color: $color__background-header;
@@ -24,10 +25,38 @@
     padding: 1em 2em;
   }
 }
+.site-header-restrainer{
+  max-width: $query_large;
+  margin: 0 auto;
+  position: relative;
+}
+.site-header__container{
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
 
 .site-branding {
   min-height: 65px;
-  width: 35%;
+  display: flex;
+  flex: 1 0 auto;
+  width: 20%;
+}
+
+.custom-logo-link {
+  margin-right: 1em;
+  img {
+    display: block;
+    height: 65px;
+    width: auto;
+  }
+}
+.site-branding__text{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  height: 65px;
 }
 
 .site-title {
@@ -54,6 +83,13 @@
   font-style: italic;
   font-weight: 100;
 }
+
 .main-navigation {
-  width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  width: 20%;
+  @media screen and (min-width: $query_medium) {
+    width: 80%;
+  }
 }
