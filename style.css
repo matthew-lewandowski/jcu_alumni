@@ -832,7 +832,6 @@ a:hover, a:active {
 	display: flex;
 	-ms-flex: 1 0 auto;
 	    flex: 1 0 auto;
-	width: 20%;
 }
 
 .custom-logo-link {
@@ -886,13 +885,6 @@ a:hover, a:active {
 	    flex-direction: column;
 	-ms-flex-pack: center;
 	    justify-content: center;
-	width: 20%;
-}
-
-@media screen and (min-width: 769px) {
-	.main-navigation {
-		width: 80%;
-	}
 }
 
 /*
@@ -959,9 +951,11 @@ Header Menu
 	text-decoration: underline;
 }
 
-.main-navigation .menu-item-has-children,
-.main-navigation .page-item-has-children {
-	max-width: 218px;
+@media screen and (max-width: 769px) {
+	.main-navigation .menu-item-has-children,
+	.main-navigation .page-item-has-children {
+		width: 80vw;
+	}
 }
 
 .main-navigation .menu-item-has-children > a,
@@ -974,7 +968,7 @@ button.dropdown-toggle {
 	right: 0;
 	border: none;
 	background: inherit;
-	color: white;
+	color: #000;
 	line-height: 1.5em;
 	padding: .4em 1em .4em .5em;
 }
@@ -988,7 +982,7 @@ button.dropdown-toggle {
 	padding: .6em .8em;
 	font-size: 80%;
 	text-transform: uppercase;
-	color: white;
+	color: #000;
 	border: 1px solid rgba(255, 255, 255, 0.3);
 }
 

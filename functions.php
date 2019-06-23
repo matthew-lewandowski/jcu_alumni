@@ -186,7 +186,12 @@ function jcu_alumni_scripts()
 
     wp_enqueue_style('jcu_alumni-style', get_stylesheet_uri());
 
-    wp_enqueue_script('jcu_alumni-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20151215', true);
+    wp_enqueue_script('jcu_alumni-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true);
+
+    wp_localize_script('jcu_alumni-navigation','jcu_alumniScreenReaderText', array(
+        'expand' => __( 'Expand child menu', 'jcu_alumni'),
+        'collapse' => __( 'Collapse child menu', 'jcu_alumni'),
+    ));
 
     wp_enqueue_script('jcu_alumni-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20151215', true);
 
