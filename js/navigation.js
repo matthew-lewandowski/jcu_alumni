@@ -58,9 +58,11 @@
 
         // Add an initial value for the attribute.
         menuToggle.attr('aria-expanded', 'false');
+        menuToggle.append($('<span />', {'class': 'fa fa-chevron-down', 'id': 'dropdown'}))
 
         menuToggle.on('click.jcu_alumni', function () {
             siteNavContain.toggleClass('toggled-on');
+            $("#dropdown").toggleClass('fa fa-chevron-down fa fa-chevron-up')
 
             $(this).attr('aria-expanded', siteNavContain.hasClass('toggled-on'));
         });
