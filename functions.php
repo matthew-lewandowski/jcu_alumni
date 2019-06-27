@@ -186,6 +186,8 @@ function jcu_alumni_scripts()
 
     wp_enqueue_style('jcu_alumni-style', get_stylesheet_uri());
 
+    wp_enqueue_style('jcu_alumni-icons', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', '', '20191627');
+
     wp_enqueue_script('jcu_alumni-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true);
 
     wp_localize_script('jcu_alumni-navigation','jcu_alumniScreenReaderText', array(
