@@ -191,6 +191,8 @@ function jcu_alumni_scripts()
 
     wp_enqueue_script('jcu_alumni-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true);
 
+    wp_enqueue_script('jcu_alumni-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20190709', true);
+
     wp_localize_script('jcu_alumni-navigation','jcu_alumniScreenReaderText', array(
         'expand' => __( 'Expand child menu', 'jcu_alumni'),
         'collapse' => __( 'Collapse child menu', 'jcu_alumni'),
