@@ -149,3 +149,17 @@ if (!function_exists('jcu_alumni_post_thumbnail')) :
         endif; // End is_singular().
     }
 endif;
+
+/**
+ * Post navigation (previous / next post) for single posts.
+ */
+function jcu_alumni_post_navigation() {
+    the_post_navigation( array(
+        'next_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Next', 'jcu_alumni' ) . '</span> ' .
+            '<span class="screen-reader-text">' . __( 'Next post:', 'jcu_alumni' ) . '</span> ' .
+            '<span class="post-title">%title</span>',
+        'prev_text' => '<span class="meta-nav" aria-hidden="true">' . __( 'Previous', 'jcu_alumni' ) . '</span> ' .
+            '<span class="screen-reader-text">' . __( 'Previous post:', 'jcu_alumni' ) . '</span> ' .
+            '<span class="post-title">%title</span>',
+    ) );
+}
