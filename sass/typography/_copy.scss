@@ -1,5 +1,6 @@
 p {
-	margin-bottom: 1.5em;
+	margin-top: .5em;
+	margin-bottom: 1em;
 }
 
 dfn, cite, em, i {
@@ -7,7 +8,22 @@ dfn, cite, em, i {
 }
 
 blockquote {
-	margin: 0 1.5em;
+	position: relative;
+	margin: 0 0 1em;
+	background: $color__background-pre;
+	padding: 1em 2em .5em 5em;
+	font-style: italic;
+	
+	&:before {
+		position: absolute;
+		top: -.2em;
+		left: -.13em;
+		content: "“";
+		font-family: $font__open_sans;
+		font-size: 12em;
+		line-height: 100%;
+		color: white;
+	}
 }
 
 address {
@@ -16,7 +32,7 @@ address {
 
 pre {
 	background: $color__background-pre;
-	font-family: $font__pre;
+	font-family: $font__open_sans;
 	@include font-size(0.9375);
 	line-height: $font__line-height-pre;
 	margin-bottom: 1.6em;
@@ -26,7 +42,7 @@ pre {
 }
 
 code, kbd, tt, var {
-	font-family: $font__code;
+	font-family: $font__open_sans;
 	@include font-size(0.9375);
 }
 

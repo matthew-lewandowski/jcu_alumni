@@ -1,17 +1,30 @@
 h1, h2, h3, h4, h5, h6 {
-  clear: both;
-  font-family: $font__open_sans;
+	margin-top: .75em;
+	margin-bottom: .25em;
+	font-family: $font__open_sans;
+	clear: both;
 }
- /* any changes to the headers can be made here */
+
 h1 {
+	font-size: 3em;
 }
+
 h2 {
+	font-size: 2.6em;
 }
+
 h3 {
+	font-size: 2.2em;
 }
-h4{
+
+h4 {
+	font-size: 2em;
 }
-h5{
+
+h5 {
+	font-size: 1.8em;
 }
-h6{
+
+h6 {
+	font-size: 1.6em;
 }
