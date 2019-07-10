@@ -8,7 +8,6 @@
 
 .entry-header {
   font-family: $font__open_sans;
-
 }
 
 .cat-links {
@@ -47,8 +46,11 @@
   }
 }
 
-.entry-meta {
+.entry-meta,
+.entry-footer {
+  font-family: $font__open_sans;
   font-size: 90%;
+
   a {
     font-weight: 700;
     text-decoration: none;
@@ -57,7 +59,7 @@
     &:focus,
     &:hover {
       color: black;
-      border-bottom: 5px solid $color__interactive;
+      border-bottom: 3px solid $color__interactive;
     }
   }
 }
@@ -68,6 +70,7 @@
     margin: 0 .5em;
   }
 }
+
 .comments-link,
 .edit-link {
   &::before {
@@ -76,14 +79,69 @@
   }
 }
 
-.post,
-.page {
-  margin: 0 0 1.5em;
-}
-
-.updated:not(.published) {
+.byline,
+.updated:not(.published){
   display: none;
 }
+
+.single .byline,
+.group-blog .byline {
+  display: inline;
+}
+
+.extra {
+  display: none;
+}
+
+/* Custom Post Meta rules for single post / no sidebar. */
+
+.no-sidebar {
+
+  .entry-meta {
+    margin-top: 1.5em;
+  }
+
+  @media screen and (min-width: $size__max-width) {
+    .post-content__wrap {
+
+      .entry-meta {
+        margin-top: 2.25em;
+        font-size: 80%;
+
+        a {
+          font-size: 110%;
+          display: block;
+          border-bottom: 3px solid white;
+
+          &:hover,
+          &:focus {
+            border-bottom-color: $color__interactive;
+          }
+        }
+      }
+
+      .byline,
+      .posted-on,
+      .comments-link,
+      .edit-link {
+        display: block;
+        margin-bottom: 1em;
+
+        &:before,
+        &:after {
+          margin: 0;
+          content: "";
+        }
+      }
+
+      .extra {
+        display: inline;
+      }
+    }
+
+  }
+}
+
 
 .page-content,
 .entry-content,
@@ -94,4 +152,9 @@
 .page-links {
   clear: both;
   margin: 0 0 1.5em;
+}
+
+.entry-footer {
+  margin: 1.5em 0;
+  font-family: $font__open_sans;
 }
