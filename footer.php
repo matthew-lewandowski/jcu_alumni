@@ -11,23 +11,22 @@
 
 ?>
 
-	</div><!-- #content -->
+</div><!-- #content -->
 
-	<footer id="colophon" class="site-footer">
-		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'https://wordpress.org/', 'jcu_alumni' ) ); ?>">
-				<?php
-				/* translators: %s: CMS name, i.e. WordPress. */
-				printf( esc_html__( 'Proudly powered by %s', 'jcu_alumni' ), 'WordPress' );
-				?>
-			</a>
-			<span class="sep"> | </span>
-				<?php
-				/* translators: 1: Theme name, 2: Theme author. */
-				printf( esc_html__( 'Theme: %1$s by %2$s.', 'jcu_alumni' ), 'jcu_alumni', '<a href="https://www.linkedin.com/in/matthew-lewandowski93/">Matthew Lewandowksi</a>' );
-				?>
-		</div><!-- .site-info -->
-	</footer><!-- #colophon -->
+<footer id="colophon" class="site-footer">
+    <div class="site-info">
+        <p>Follow us on</p>
+    </div><!-- .site-info -->
+    <nav class="social-menu">
+    <?php wp_nav_menu(array('theme_location' => 'menu-2',)); ?>
+    </nav>
+    <div class="site-info">
+        <?php
+        /* translators: 1: Theme name, 2: Theme author. */
+        printf(esc_html__('Theme: %1$s by %2$s.', 'jcu_alumni'), 'jcu_alumni', '<a href="https://www.linkedin.com/in/matthew-lewandowski93/">Matthew Lewandowksi</a>');
+        ?>
+    </div><!-- .site-info -->
+</footer><!-- #colophon -->
 </div><!-- #page -->
 
 <?php wp_footer(); ?>

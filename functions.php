@@ -46,6 +46,7 @@ if (!function_exists('jcu_alumni_setup')) :
         // This theme uses wp_nav_menu() in one location.
         register_nav_menus(array(
             'menu-1' => esc_html__('Primary', 'jcu_alumni'),
+            'menu-2' => esc_html__('Social Media Menu', 'jcu_alumni'),
         ));
 
         /*
@@ -186,7 +187,11 @@ function jcu_alumni_scripts()
 
     wp_enqueue_style('jcu_alumni-style', get_stylesheet_uri());
 
+    wp_enqueue_style('jcu_alumni-icons', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', '', '20191627');
+
     wp_enqueue_script('jcu_alumni-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true);
+
+    wp_enqueue_script('jcu_alumni-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20190709', true);
 
     wp_localize_script('jcu_alumni-navigation','jcu_alumniScreenReaderText', array(
         'expand' => __( 'Expand child menu', 'jcu_alumni'),

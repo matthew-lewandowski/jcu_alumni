@@ -22,8 +22,8 @@
 			?>
 			<div class="entry-meta">
 				<?php
+                jcu_alumni_posted_by();
 				jcu_alumni_posted_on();
-				jcu_alumni_posted_by();
 				?>
 			</div><!-- .entry-meta -->
 		<?php endif; ?>

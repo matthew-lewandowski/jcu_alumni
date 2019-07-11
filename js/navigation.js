@@ -12,23 +12,24 @@
 
         // Add dropdown toggle that displays child menu items.
         var dropdownToggle = $('<button />', {'class': 'dropdown-toggle', 'aria-expanded': false})
-            .append(jcu_alumniScreenReaderText.icon)
+            .append($('<span />', {'class': 'fa fa-angle-double-down', 'id': 'subdropdown'}))
             .append($('<span />', {'class': 'screen-reader-text', text: jcu_alumniScreenReaderText.expand}));
 
         container.find('.menu-item-has-children > a, .page_item_has_children > a').after(dropdownToggle);
 
-        // Set the active submenu dropdown toggle button initial state.
-        container.find('.current-menu-ancestor > button')
-            .addClass('toggled-on')
-            .attr('aria-expanded', 'true')
-            .find('.screen-reader-text')
-            .text(jcu_alumniScreenReaderText.collapse);
-        // Set the active submenu initial state.
-        container.find('.current-menu-ancestor > .sub-menu').addClass('toggled-on');
+        // // Set the active submenu dropdown toggle button initial state.
+        // container.find('.current-menu-ancestor > button')
+        //     .addClass('toggled-on')
+        //     .attr('aria-expanded', 'true')
+        //     .find('.screen-reader-text')
+        //     .text(jcu_alumniScreenReaderText.collapse);
+        // // Set the active submenu initial state.
+        // container.find('.current-menu-ancestor > .sub-menu').addClass('toggled-on');
 
         container.find('.dropdown-toggle').click(function (e) {
             var _this = $(this),
-                screenReaderSpan = _this.find('.screen-reader-text');
+                screenReaderSpan = _this.find('.dropdown-symbol');
+                $("#subdropdown").toggleClass('fal fa-angle-double-down fal fa-angle-double-up')
 
             e.preventDefault();
             _this.toggleClass('toggled-on');
@@ -57,9 +58,11 @@
 
         // Add an initial value for the attribute.
         menuToggle.attr('aria-expanded', 'false');
+        menuToggle.append($('<span />', {'class': 'fa fa-angle-double-down', 'id': 'dropdown'}))
 
         menuToggle.on('click.jcu_alumni', function () {
             siteNavContain.toggleClass('toggled-on');
+            $("#dropdown").toggleClass('fal fa-angle-double-down fal fa-angle-double-up')
 
             $(this).attr('aria-expanded', siteNavContain.hasClass('toggled-on'));
         });
