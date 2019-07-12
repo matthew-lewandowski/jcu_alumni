@@ -29,7 +29,12 @@
         <?php endif; ?>
     </header><!-- .entry-header -->
 
-    <?php jcu_alumni_post_thumbnail(); ?>
+    <?php
+    if ( has_post_thumbnail()){ ?>
+            <figure class="featured-image full-bleed">
+        <?php the_post_thumbnail('jcu_alumni-full-bleed'); ?>
+    </figure><!-- .featured-image full-bleed -->
+    <?php } ?>
 
     <section class="post-content">
 
@@ -73,7 +78,7 @@
                 if (!is_active_sidebar('sidebar-1')) : ?>
             </div><!-- .post-content__body -->
         </div><!-- .post-content__wrap -->
-        <?php endif; ?>
+    <?php endif; ?>
         <?php
         jcu_alumni_post_navigation();
 
