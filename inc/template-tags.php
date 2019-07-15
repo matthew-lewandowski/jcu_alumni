@@ -163,3 +163,18 @@ function jcu_alumni_post_navigation() {
             '<span class="post-title">%title</span>',
     ) );
 }
+/**
+ *  Customize ellipsis at the end of excerpts
+ */
+function jcu_alumni_excerpt_more ($more){
+    return "...";
+}
+add_filter('excerpt_more', 'jcu_alumni_excerpt_more');
+
+/**
+ *  Filter excerpt length to 100 words
+ */
+function jcu_alumni_excerpt_length($length){
+    return 100;
+}
+add_filter('excerpt_length', 'jcu_alumni_excerpt_length');
