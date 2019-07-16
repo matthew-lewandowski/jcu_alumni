@@ -16,12 +16,16 @@ function jcu_alumni_body_classes($classes)
     // Adds a class of hfeed to non-singular pages.
     if (!is_singular()) {
         $classes[] = 'hfeed';
+        $classes[] = 'archive-view';
     }
     // Adds a class if sidebar is active or not
     if (is_active_sidebar('sidebar-1')) {
         $classes[] = "has-sidebar";
     } else {
         $classes[] = "no-sidebar";
+    }
+    if (is_active_sidebar('sidebar-2')) {
+        $classes[] = 'has-page-sidebar';
     }
 
     return $classes;

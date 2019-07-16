@@ -34,7 +34,7 @@ if (!function_exists('jcu_alumni_posted_on')) :
         echo '<span class="posted-on">' . $posted_on . '</span>'; // WPCS: XSS OK.
 
         if (!post_password_required() && (comments_open() || get_comments_number())) {
-            echo ' <span class="comments-link">';
+            echo ' <span class="comments-link"><span class="extra">Discussion </span>';
             comments_popup_link(
                 sprintf(
                     wp_kses(
@@ -65,7 +65,7 @@ if (!function_exists('jcu_alumni_posted_on')) :
                 ),
                 get_the_title()
             ),
-            ' <span class="edit-link">',
+            ' <span class="edit-link"><span class="extra">Admin </span>',
             '</span>'
         );
     }
@@ -163,3 +163,18 @@ function jcu_alumni_post_navigation() {
             '<span class="post-title">%title</span>',
     ) );
 }
+/**
+ *  Customize ellipsis at the end of excerpts
+ */
+function jcu_alumni_excerpt_more ($more){
+    return "...";
+}
+add_filter('excerpt_more', 'jcu_alumni_excerpt_more');
+
+/**
+ *  Filter excerpt length to 100 words
+ */
+function jcu_alumni_excerpt_length($length){
+    return 100;
+}
+add_filter('excerpt_length', 'jcu_alumni_excerpt_length');
