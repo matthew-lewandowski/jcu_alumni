@@ -1,10 +1,12 @@
 .archive-view {
   background-color: #eee;
 
-  .post {
+  .post,
+  .page {
     position: relative;
-    background-color: white;
+    background: white;
   }
+
   .post__content {
     padding: 2em 2em 3em;
   }
@@ -15,18 +17,20 @@
         display: flex;
         justify-content: space-between;
         flex-wrap: wrap;
-
-        .page-header {
-          width: 100%;
-          flex: 1 0 100%;
-        }
-        .content-area {
-          width: $size__ratio-large;
-        }
-        .widget-area {
-          width: $size__ratio-small;
-        }
       }
+
+      .page-header {
+        width: 100%;
+        flex: 1 0 100%;
+      }
+      .content-area {
+        width: $size__ratio-large;
+      }
+
+      .widget-area {
+        width: $size__ratio-small;
+      }
+
     }
   }
 }
@@ -43,8 +47,34 @@
   margin: -1em 0 2em;
 }
 
+/* For content-none.php */
+.search,
+.error-404 {
+
+  .page-content {
+    margin-bottom: 2em;
+    padding: 1em 2em;
+    font-family: $font__open_sans;
+    color: white;
+    background: $color__interactive;
+  }
+
+  input[type="search"] {
+    padding: .5em;
+  }
+  input[type="submit"] {
+    border-color: white;
+    color: white;
+
+    &:focus,
+    &:hover {
+      color: black;
+    }
+  }
+}
+
 .sticky::before {
-  content: '';
+  content: "";
   display: block;
   width: 2em;
   height: 2em;
@@ -54,7 +84,7 @@
   border-width: 0 2em 2em 0;
   border-color: #eee #eee white;
   border-style: solid;
-  box-shadow: -1px 2px 2px #eee;
+  box-shadow: -1px 2px 2px hsla(0, 0%, 10%, .1);
 }
 
 .index-image {
@@ -62,6 +92,7 @@
     display: block;
     margin: 0 auto;
   }
+
   a {
     &:focus > img,
     &:hover > img {

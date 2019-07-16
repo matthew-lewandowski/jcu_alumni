@@ -24,6 +24,9 @@ function jcu_alumni_body_classes($classes)
     } else {
         $classes[] = "no-sidebar";
     }
+    if (is_active_sidebar('sidebar-2')) {
+        $classes[] = 'has-page-sidebar';
+    }
 
     return $classes;
 }
