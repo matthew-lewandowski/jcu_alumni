@@ -1421,13 +1421,20 @@ button.dropdown-toggle {
 --------------------------------------------------------------*/
 .site-footer {
 	position: relative;
-	display: block;
-	width: 92%;
-	margin: 0 auto;
+	padding: 1em;
 	font-family: "Open Sans", sans-serif;
 	color: #000;
-	background-color: #fff;
 	text-align: center;
+}
+
+.site-footer a {
+	font-weight: 700;
+	color: #000;
+	text-decoration: none;
+}
+
+.site-footer a:hover, .site-footer a:focus {
+	text-decoration: underline;
 }
 
 @media screen and (min-width: 374px) {
@@ -1436,24 +1443,63 @@ button.dropdown-toggle {
 	}
 }
 
+.site-footer__wrap {
+	max-width: 1080px;
+	margin: 0 auto;
+}
+
+@media screen and (min-width: 769px) {
+	.site-footer__wrap {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: justify;
+		    justify-content: space-between;
+	}
+}
+
+.site-info {
+	margin: 1em 0 1em auto;
+	-ms-flex-item-align: center;
+	    -ms-grid-row-align: center;
+	    align-self: center;
+}
+
+@media screen and (min-width: 769px) {
+	.site-info {
+		text-align: right;
+	}
+	.site-info span {
+		display: block;
+	}
+}
+
+.social-menu {
+	margin: 1em 0;
+}
+
 .social-menu ul {
 	display: -ms-flexbox;
 	display: flex;
-	list-style-type: none;
 	-ms-flex-pack: center;
 	    justify-content: center;
-	padding: 0;
+	-ms-flex-wrap: wrap;
+	    flex-wrap: wrap;
+	list-style-type: none;
 	margin: 0;
+	padding: 0;
 }
 
 .social-menu ul a {
 	display: block;
 	padding: .5em 1em;
+	color: #000;
 	text-decoration: none;
+	opacity: .6;
 }
 
 .social-menu ul a:hover, .social-menu ul a:focus {
 	text-decoration: underline;
+	opacity: 1;
 }
 
 /*--------------------------------------------------------------
@@ -2304,6 +2350,49 @@ object {
 	margin: 0;
 	font-family: "Open Sans", sans-serif;
 	border: none;
+}
+
+/*--------------------------------------------------------------
+## Icons
+--------------------------------------------------------------*/
+/* SVG Icons base styles */
+.icon {
+	display: inline-block;
+	fill: currentColor;
+	height: 1em;
+	position: relative;
+	/* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 1em;
+}
+
+/*--------------------------------------------------------------
+SVG Fallbacks
+--------------------------------------------------------------*/
+.svg-fallback {
+	display: none;
+}
+
+.no-svg .svg-fallback {
+	display: inline-block;
+}
+
+/* Social Menu fallbacks */
+.no-svg .social-menu a {
+	height: auto;
+	width: auto;
+}
+
+.no-svg .social-menu li a .screen-reader-text {
+	clip: auto;
+	font-size: 16px;
+	font-size: 1rem;
+	font-weight: 400;
+	height: auto;
+	position: relative !important;
+	/* overrides previous !important styles */
+	width: auto;
 }
 
 /*# sourceMappingURL=../jcu_alumni/sass/maps/style.css.map */

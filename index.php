@@ -14,14 +14,14 @@
 
 get_header(); ?>
 
-<?php if ( have_posts() ) : ?>
+<?php if (have_posts()) : ?>
 
     <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
 
             <?php
 
-            if ( is_home() && ! is_front_page() ) : ?>
+            if (is_home() && !is_front_page()) : ?>
                 <header>
                     <h1 class="page-title screen-reader-text"><?php single_post_title(); ?></h1>
                 </header>
@@ -30,21 +30,21 @@ get_header(); ?>
             endif;
 
             /* Start the Loop */
-            while ( have_posts() ) : the_post();
+            while (have_posts()) : the_post();
 
                 /*
                  * Include the Post-Format-specific template for the content.
                  * If you want to override this in a child theme, then include a file
                  * called content-___.php (where ___ is the Post Format name) and that will be used instead.
                  */
-                get_template_part( 'template-parts/content', get_post_format() );
+                get_template_part('template-parts/content', get_post_format());
 
             endwhile;
 
-            the_posts_pagination( array(
-                'prev_text' => __( 'Newer', 'jcu_alumni' ),
-                'next_text' => __( 'Older', 'jcu_alumni' ),
-                'before_page_number' => '<span class="screen-reader-text">' . __( 'Page ', 'jcu_alumni' ) . '</span>',
+            the_posts_pagination(array(
+                'prev_text' => jcu_alumni_get_svg(array('icon' => 'arrow-left')) . __(' Newer', 'jcu_alumni'),
+                'next_text' => __('Older ', 'jcu_alumni') . jcu_alumni_get_svg(array('icon' => 'arrow-right')),
+                'before_page_number' => '<span class="screen-reader-text">' . __('Page ', 'jcu_alumni') . '</span>',
             ));
 
             ?>
@@ -59,7 +59,7 @@ get_header(); ?>
 
 else :
 
-    get_template_part( 'template-parts/content', 'none' );
+    get_template_part('template-parts/content', 'none');
     return;
 
 endif;
