@@ -12,8 +12,7 @@
 }
 
 @media screen and (min-width: $size__max-width) {
-  .single.has-sidebar,
-  .page {
+  .single.has-sidebar {
     .hentry {
       display: flex;
       flex-wrap: wrap;
@@ -40,6 +39,7 @@
         flex-direction: row-reverse;
       }
     }
+
     &:not(.has-page-sidebar) {
       .hentry {
         justify-content: flex-end;
@@ -49,23 +49,34 @@
 }
 
 @media screen and (min-width: $size__max-width) {
-  .single {
+  .single .page,
+  .no-sidebar {
 
-    &.no-sidebar {
+    .entry-header {
+      text-align: center;
+    }
 
-      .post-content__wrap {
+    .post-content__wrap {
 
-        display: flex;
-        justify-content: space-between;
+      display: flex;
+      justify-content: space-between;
 
-        .entry-meta {
-          width: 20%;
-        }
+      .entry-meta {
+        width: 20%;
+      }
 
-        .post-content__body {
-          width: 70%;
-        }
+      .post-content__body {
+        width: 70%;
       }
     }
   }
 }
+
+.single .page,
+.no-sidebar {
+
+  .entry-header {
+    text-align: center;
+  }
+}
+
