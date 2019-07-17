@@ -14,8 +14,10 @@
 
     ul {
       display: none;
-      top: 1.5em;
       z-index: 99999;
+      @media screen and (min-width: $query_medium) {
+        top: 1.5em;
+      }
 
       ul {
         top: 0;
@@ -103,9 +105,12 @@ button.dropdown-toggle {
 .toggled-on ul,
 .sub-menu.toggled-on {
   display: block;
-  position: absolute;
+  position: relative;
   background: white;
   margin-top: 10px;
+  @media screen and (min-width: $query_medium) {
+    position: absolute;
+  }
 }
 
 @media screen and (min-width: $query_medium) {

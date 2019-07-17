@@ -849,6 +849,8 @@ a:hover, a:active {
 .pagination span {
 	padding: .5em 1em;
 	background: white;
+	-ms-flex: auto;
+	    flex: auto;
 }
 
 .pagination a {
@@ -1287,8 +1289,13 @@ Header Menu
 
 .main-navigation ul ul {
 	display: none;
-	top: 1.5em;
 	z-index: 99999;
+}
+
+@media screen and (min-width: 769px) {
+	.main-navigation ul ul {
+		top: 1.5em;
+	}
 }
 
 .main-navigation ul ul ul {
@@ -1369,9 +1376,16 @@ button.dropdown-toggle {
 .toggled-on ul,
 .sub-menu.toggled-on {
 	display: block;
-	position: absolute;
+	position: relative;
 	background: white;
 	margin-top: 10px;
+}
+
+@media screen and (min-width: 769px) {
+	.toggled-on ul,
+	.sub-menu.toggled-on {
+		position: absolute;
+	}
 }
 
 @media screen and (min-width: 769px) {
@@ -1450,8 +1464,7 @@ button.dropdown-toggle {
 
 @media screen and (min-width: 769px) {
 	.site-footer__wrap {
-		display: -ms-flexbox;
-		display: flex;
+		display: block;
 		-ms-flex-pack: justify;
 		    justify-content: space-between;
 	}
@@ -1465,9 +1478,6 @@ button.dropdown-toggle {
 }
 
 @media screen and (min-width: 769px) {
-	.site-info {
-		text-align: right;
-	}
 	.site-info span {
 		display: block;
 	}

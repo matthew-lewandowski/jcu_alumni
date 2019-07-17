@@ -27,7 +27,7 @@
   margin: 0 auto;
 
   @media screen and (min-width: $query_medium) {
-    display: flex;
+    display: block;
     justify-content: space-between;
   }
 }
@@ -37,7 +37,6 @@
   align-self: center;
 
   @media screen and (min-width: $query_medium) {
-    text-align: right;
 
     span {
       display: block;
