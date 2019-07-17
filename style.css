@@ -1178,7 +1178,6 @@ a:hover, a:active {
 .site-header {
 	position: relative;
 	display: block;
-	width: 92%;
 	margin: 0 auto;
 	font-family: "Open Sans", sans-serif;
 	color: #000;
@@ -1439,6 +1438,7 @@ button.dropdown-toggle {
 	font-family: "Open Sans", sans-serif;
 	color: #000;
 	text-align: center;
+	background-color: #fff;
 }
 
 .site-footer a {
