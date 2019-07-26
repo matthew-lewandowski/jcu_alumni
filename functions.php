@@ -230,8 +230,14 @@ function jcu_alumni_scripts()
 add_action('wp_enqueue_scripts', 'jcu_alumni_scripts');
 
 /**
+ * SVG Icons class.
+ */
+require get_template_directory() . '/classes/class-jcu_alumni-svg-icons.php';
+
+/**
  * Implement the Custom Header feature.
  */
+
 require get_template_directory() . '/inc/custom-header.php';
 
 /**

@@ -24,7 +24,17 @@
         // Make sure there is a social menu to display.
         if (has_nav_menu('social')) { ?>
             <nav class="social-menu">
-                <?php wp_nav_menu( array( 'theme_location' => 'social' ) ); ?>
+                <?php
+                wp_nav_menu(
+                    array(
+                        'theme_location' => 'social',
+                        'menu_class'     => 'social-links-menu',
+                        'link_before'    => '<span class="screen-reader-text">',
+                        'link_after'     => '</span>' . jcu_alumni_get_icon_svg( 'link' ),
+                        'depth'          => 1,
+                    )
+                );
+                ?>
             </nav><!-- .social-menu -->
         <?php } ?>
     </div><!-- .site-footer__wrap -->

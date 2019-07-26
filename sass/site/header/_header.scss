@@ -15,7 +15,6 @@
 .site-header {
   position: relative;
   display: block;
-  width: 92%;
   margin: 0 auto;
   font-family: $font__open_sans;
   color: $color__text;
@@ -87,6 +86,11 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+}
+
+.spacer {
+  background-color: $color__sites-grey;
+  height: 30px;
 }
 /*
 Header Menu
