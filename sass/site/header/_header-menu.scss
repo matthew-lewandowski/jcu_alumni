@@ -1,3 +1,4 @@
+
 .main-navigation {
   display: flex;
 
@@ -28,7 +29,8 @@
 
         &:hover > ul,
         &.focus > ul {
-          left: 100%;
+          //left: 100%;
+          position: relative;
         }
       }
 
@@ -127,7 +129,6 @@ button.dropdown-toggle {
     }
 
     ul {
-      display: block;
       display: flex;
       flex-wrap: wrap;
 

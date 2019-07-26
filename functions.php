@@ -235,12 +235,9 @@ add_action('wp_enqueue_scripts', 'jcu_alumni_scripts');
 require get_template_directory() . '/classes/class-jcu_alumni-svg-icons.php';
 
 /**
- * Custom Comment Walker template.
- */
-require get_template_directory() . '/classes/class-jcu_alumni-walker-comment.php';
-/**
  * Implement the Custom Header feature.
  */
+
 require get_template_directory() . '/inc/custom-header.php';
 
 /**

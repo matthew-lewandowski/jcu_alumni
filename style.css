@@ -1275,6 +1275,11 @@ a:hover, a:active {
 	    justify-content: center;
 }
 
+.spacer {
+	background-color: #e9e9e9;
+	height: 30px;
+}
+
 /*
 Header Menu
  */
@@ -1315,7 +1320,7 @@ Header Menu
 
 .main-navigation ul ul li:hover > ul,
 .main-navigation ul ul li.focus > ul {
-	left: 100%;
+	position: relative;
 }
 
 .main-navigation ul ul a {
@@ -1405,7 +1410,6 @@ button.dropdown-toggle {
 		background: rgba(255, 255, 255, 0.1);
 	}
 	.main-navigation ul {
-		display: block;
 		display: -ms-flexbox;
 		display: flex;
 		-ms-flex-wrap: wrap;
@@ -1446,7 +1450,7 @@ button.dropdown-toggle {
 	font-family: "Open Sans", sans-serif;
 	color: #000;
 	text-align: center;
-	background-color: #fff;
+	background-color: #e9e9e9;
 }
 
 .site-footer a {
@@ -1533,6 +1537,9 @@ button.dropdown-toggle {
 
 .entry-header {
 	font-family: "Open Sans", sans-serif;
+	text-align: center;
+	background-color: #e9e9e9;
+	padding: 5px;
 }
 
 .cat-links {

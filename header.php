@@ -51,8 +51,9 @@
                 </div><!-- .site-branding -->
 
                 <nav id="site-navigation" class="main-navigation">
-                    <button class="menu-toggle" aria-controls="primary-menu"
-                            aria-expanded="false"><?php esc_html_e('Primary Menu', 'jcu_alumni'); ?></button>
+                                        <button class="menu-toggle" aria-controls="primary-menu"
+                                                aria-expanded="false">
+                    <?php esc_html_e('', 'jcu_alumni'); ?></button>
                     <?php
                     wp_nav_menu(array(
                         'theme_location' => 'primary',
@@ -63,10 +64,11 @@
             </div><!-- #site-header__container -->
         </div><!-- #site-header-restrainer -->
     </header><!-- #masthead -->
-    <?php if (get_header_image() && is_front_page()) : //this will only display header image on front page ?>
+    <div class="spacer"></div><!-- #spacer -->
+<!--    --><?php //if (get_header_image() && is_front_page()) : //this will only display header image on front page ?>
+    <?php if (get_header_image()) : //this will only display header image ?>
         <figure class="header-image">
             <?php the_header_image_tag(); ?>
         </figure><!-- #header-image -->
     <?php endif; //End header image check. ?>
-
     <div id="content" class="site-content">
