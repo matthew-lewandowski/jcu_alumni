@@ -665,7 +665,8 @@ function wpb_load_widget()
 }
 add_action('widgets_init', 'wpb_load_widget');
 
-add_action('wp_head', 'generate_map');
+add_action('widgets_init', 'generate_map');
+
 function generate_map() {
     require_once WP_PLUGIN_DIR . '/novo-map/includes/class-novo-map-gmap.php';
     require_once WP_PLUGIN_DIR . '/novo-map/includes/class-novo-map-gmap-manager.php';
@@ -677,6 +678,13 @@ function generate_map() {
     $gmap->set_latitude('');
     $gmap->set_longitude('');
     $gmap->set_zoom('');
-    echo '<div class="novomap-map-wrap"><div id="novomapname"></div></div>';
-    $gmap->enqueue_map('novo-map');
+    echo '<div class="novomap-map-wrap"><div id="Alumni"></div></div>';
+    $gmap->enqueue_map('nova-map');
+}
+
+
+add_filter( 'novo_map_allowed_post_type', 'novo_map_post_types' );
+function novo_map_post_types($types) {
+    $types = array( 'post', 'page', 'testimonial' );
+    return $types;
 }
