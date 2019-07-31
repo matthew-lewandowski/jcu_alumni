@@ -195,6 +195,16 @@ function jcu_alumni_widgets_init()
         'before_title' => '<h2 class="widget-title">',
         'after_title' => '</h2>',
     ));
+
+    register_sidebar(array(
+        'name' => esc_html__('Map Sidebar', 'jcu_alumni'),
+        'id' => 'map-1',
+        'description' => esc_html__('Add map widget here.', 'jcu_alumni'),
+        'before_widget' => '<section id="%1$s" class="widget %2$s">',
+        'after_widget' => '</section>',
+        'before_title' => '<h2 class="widget-title">',
+        'after_title' => '</h2>',
+    ));
 }
 
 add_action('widgets_init', 'jcu_alumni_widgets_init');
@@ -214,6 +224,8 @@ function jcu_alumni_scripts()
     wp_enqueue_script('jcu_alumni-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true);
 
     wp_enqueue_script('jcu_alumni-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20190709', true);
+
+    wp_enqueue_script('jcu_alumni-map-widget', get_template_directory_uri() . '/js/map-widget.js', array('jquery'), '20190731', true);
 
     wp_localize_script('jcu_alumni-navigation', 'jcu_alumniScreenReaderText', array(
         'expand' => __('Expand child menu', 'jcu_alumni'),
@@ -343,3 +355,328 @@ function jcu_alumni_post_thumbnail_sizes_attr($attr, $attachment, $size)
 }
 
 add_filter('wp_get_attachment_image_attributes', 'jcu_alumni_post_thumbnail_sizes_attr', 10, 3);
+
+/**
+ * A custom widget for the map
+ */
+class matts_Map_Widget extends WP_Widget
+{
+    /**
+     * To create the map widget all four methods will be
+     * nested inside this single instance of the WP_Widget class.
+     **/
+
+    public function __construct()
+    {
+        $widget_options = array(
+            'classname' => 'widget_map',
+            'description' => 'This is the map widget',
+            'customize_selective_refresh' => true,
+        );
+        parent::__construct('map', 'Map Widget', $widget_options);
+    }
+
+    public function widget($args, $instance)
+    {
+        {
+            static $first_dropdown = true;
+
+            $title = !empty($instance['title']) ? $instance['title'] : __('Categories');
+
+            /** This filter is documented in wp-includes/widgets/class-wp-widget-pages.php */
+            $title = apply_filters('widget_title', $title, $instance, $this->id_base);
+
+            $c = !empty($instance['count']) ? '1' : '0';
+            $h = !empty($instance['hierarchical']) ? '1' : '0';
+            $d = !empty($instance['dropdown']) ? '1' : '0';
+
+            echo $args['before_widget'];
+
+            if ($title) {
+                echo $args['before_title'] . $title . $args['after_title'];
+            }
+
+            $cat_args = array(
+                'orderby' => 'name',
+                'show_count' => $c,
+                'hierarchical' => $h,
+            );
+
+            if ($d) {
+                echo sprintf('<form action="%s" method="get">', esc_url(home_url()));
+                $dropdown_id = ($first_dropdown) ? 'cat' : "{$this->id_base}-dropdown-{$this->number}";
+                $first_dropdown = false;
+
+                echo '<label class="screen-reader-text" for="' . esc_attr($dropdown_id) . '">' . $title . '</label>';
+
+                $cat_args['show_option_none'] = __('Select Category');
+                $cat_args['id'] = $dropdown_id;
+
+                /**
+                 * Filters the arguments for the Categories widget drop-down.
+                 *
+                 * @since 2.8.0
+                 * @since 4.9.0 Added the `$instance` parameter.
+                 *
+                 * @see wp_dropdown_categories()
+                 *
+                 * @param array $cat_args An array of Categories widget drop-down arguments.
+                 * @param array $instance Array of settings for the current widget.
+                 */
+                wp_dropdown_categories(apply_filters('widget_categories_dropdown_args', $cat_args, $instance));
+
+                echo '</form>';
+                ?>
+
+                <script type='text/javascript'>
+                    /* <![CDATA[ */
+                    (function () {
+                        var dropdown = document.getElementById("<?php echo esc_js($dropdown_id); ?>");
+
+                        function onCatChange() {
+                            if (dropdown.options[dropdown.selectedIndex].value > 0) {
+                                dropdown.parentNode.submit();
+                            }
+                        }
+
+                        dropdown.onchange = onCatChange;
+                    })();
+                    /* ]]> */
+                </script>
+
+                <?php
+            } else {
+                ?>
+                <ul id="map" class="map-widget-con">
+                    <?php
+
+                    $cat_args['title_li'] = '';
+                    /**
+                     * Filters the arguments for the Categories widget.
+                     *
+                     * @since 2.8.0
+                     * @since 4.9.0 Added the `$instance` parameter.
+                     *
+                     * @param array $cat_args An array of Categories widget options.
+                     * @param array $instance Array of settings for the current widget.
+                     */
+                    $this->wp_list_categories_matt(apply_filters('widget_categories_args', $cat_args, $instance));
+                    foreach ((get_the_category()) as $category) {
+                        echo $category->name . "<br>";
+                    }
+                    ?>
+                </ul>
+                <?php
+            }
+
+            echo $args['after_widget'];
+        }
+    }
+
+    public function form($instance)
+    {
+        //Defaults
+        $instance = wp_parse_args((array)$instance, array('title' => ''));
+        $count = isset($instance['count']) ? (bool)$instance['count'] : false;
+        $hierarchical = isset($instance['hierarchical']) ? (bool)$instance['hierarchical'] : false;
+        $dropdown = isset($instance['dropdown']) ? (bool)$instance['dropdown'] : false;
+        ?>
+        <p><label for="<?php echo $this->get_field_id('title'); ?>"><?php _e('Title:'); ?></label>
+            <input class="widefat" id="<?php echo $this->get_field_id('title'); ?>"
+                   name="<?php echo $this->get_field_name('title'); ?>" type="text"
+                   value="<?php echo esc_attr($instance['title']); ?>"/></p>
+
+        <p><input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('dropdown'); ?>"
+                  name="<?php echo $this->get_field_name('dropdown'); ?>"<?php checked($dropdown); ?> />
+            <label for="<?php echo $this->get_field_id('dropdown'); ?>"><?php _e('Display as dropdown'); ?></label><br/>
+
+            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('count'); ?>"
+                   name="<?php echo $this->get_field_name('count'); ?>"<?php checked($count); ?> />
+            <label for="<?php echo $this->get_field_id('count'); ?>"><?php _e('Show post counts'); ?></label><br/>
+
+            <input type="checkbox" class="checkbox" id="<?php echo $this->get_field_id('hierarchical'); ?>"
+                   name="<?php echo $this->get_field_name('hierarchical'); ?>"<?php checked($hierarchical); ?> />
+            <label for="<?php echo $this->get_field_id('hierarchical'); ?>"><?php _e('Show hierarchy'); ?></label></p>
+        <?php
+    }
+
+    public function update($new_instance, $old_instance)
+    {
+        $instance = $old_instance;
+        $instance['title'] = sanitize_text_field($new_instance['title']);
+        $instance['count'] = !empty($new_instance['count']) ? 1 : 0;
+        $instance['hierarchical'] = !empty($new_instance['hierarchical']) ? 1 : 0;
+        $instance['dropdown'] = !empty($new_instance['dropdown']) ? 1 : 0;
+
+        return $instance;
+    }
+
+    function wp_list_categories_matt($args = '')
+    {
+        $defaults = array(
+            'child_of' => 0,
+            'current_category' => 0,
+            'depth' => 0,
+            'echo' => 1,
+            'exclude' => '',
+            'exclude_tree' => '',
+            'feed' => '',
+            'feed_image' => '',
+            'feed_type' => '',
+            'hide_empty' => 1,
+            'hide_title_if_empty' => false,
+            'hierarchical' => true,
+            'order' => 'ASC',
+            'orderby' => 'name',
+            'separator' => '<br />',
+            'show_count' => 0,
+            'show_option_all' => '',
+            'show_option_none' => __('No categories'),
+            'style' => 'list',
+            'taxonomy' => 'category',
+            'title_li' => __('Categories'),
+            'use_desc_for_title' => 1,
+        );
+
+        $r = wp_parse_args($args, $defaults);
+
+        if (!isset($r['pad_counts']) && $r['show_count'] && $r['hierarchical']) {
+            $r['pad_counts'] = true;
+        }
+
+        // Descendants of exclusions should be excluded too.
+        if (true == $r['hierarchical']) {
+            $exclude_tree = array();
+
+            if ($r['exclude_tree']) {
+                $exclude_tree = array_merge($exclude_tree, wp_parse_id_list($r['exclude_tree']));
+            }
+
+            if ($r['exclude']) {
+                $exclude_tree = array_merge($exclude_tree, wp_parse_id_list($r['exclude']));
+            }
+
+            $r['exclude_tree'] = $exclude_tree;
+            $r['exclude'] = '';
+        }
+
+        if (!isset($r['class'])) {
+            $r['class'] = ('category' == $r['taxonomy']) ? 'categories' : $r['taxonomy'];
+        }
+
+        if (!taxonomy_exists($r['taxonomy'])) {
+            return false;
+        }
+
+        $show_option_all = $r['show_option_all'];
+        $show_option_none = $r['show_option_none'];
+
+        $categories = get_categories($r);
+
+        $output = '';
+        if ($r['title_li'] && 'list' == $r['style'] && (!empty($categories) || !$r['hide_title_if_empty'])) {
+            $output = '<li class="' . esc_attr($r['class']) . '">' . $r['title_li'] . '<ul>';
+        }
+        if (empty($categories)) {
+            if (!empty($show_option_none)) {
+                if ('list' == $r['style']) {
+                    $output .= '<li class="cat-item-none">' . $show_option_none . '</li>';
+                } else {
+                    $output .= $show_option_none;
+                }
+            }
+        } else {
+            if (!empty($show_option_all)) {
+
+                $posts_page = '';
+
+                // For taxonomies that belong only to custom post types, point to a valid archive.
+                $taxonomy_object = get_taxonomy($r['taxonomy']);
+                if (!in_array('post', $taxonomy_object->object_type) && !in_array('page', $taxonomy_object->object_type)) {
+                    foreach ($taxonomy_object->object_type as $object_type) {
+                        $_object_type = get_post_type_object($object_type);
+
+                        // Grab the first one.
+                        if (!empty($_object_type->has_archive)) {
+                            $posts_page = get_post_type_archive_link($object_type);
+                            break;
+                        }
+                    }
+                }
+
+                // Fallback for the 'All' link is the posts page.
+                if (!$posts_page) {
+                    if ('page' == get_option('show_on_front') && get_option('page_for_posts')) {
+                        $posts_page = get_permalink(get_option('page_for_posts'));
+                    } else {
+                        $posts_page = home_url('/');
+                    }
+                }
+
+                $posts_page = esc_url($posts_page);
+                if ('list' == $r['style']) {
+                    $output .= "<li class='cat-item-all'><a href='$posts_page'>$show_option_all</a></li>"; //not this
+                } else {
+                    $output .= "<a href='$posts_page'>$show_option_all</a>"; //not this
+                }
+            }
+
+            if (empty($r['current_category']) && (is_category() || is_tax() || is_tag())) {
+                $current_term_object = get_queried_object();
+                if ($current_term_object && $r['taxonomy'] === $current_term_object->taxonomy) {
+                    $r['current_category'] = get_queried_object_id();
+                }
+            }
+
+            if ($r['hierarchical']) {
+                $depth = $r['depth'];
+            } else {
+                $depth = -1; // Flat.
+            }
+            $output .= walk_category_tree($categories, $depth, $r);
+        }
+
+        if ($r['title_li'] && 'list' == $r['style'] && (!empty($categories) || !$r['hide_title_if_empty'])) {
+            $output .= '</ul></li>';
+        }
+
+        /**
+         * Filters the HTML output of a taxonomy list.
+         *
+         * @since 2.1.0
+         *
+         * @param string $output HTML output.
+         * @param array $args An array of taxonomy-listing arguments.
+         */
+        $html = apply_filters('wp_list_categories_matt', $output, $args);
+
+        if ($r['echo']) {
+            echo $html;
+        } else {
+            return $html;
+        }
+    }
+}
+
+// Register and load the widget
+function wpb_load_widget()
+{
+    register_widget('matts_Map_Widget');
+}
+add_action('widgets_init', 'wpb_load_widget');
+
+add_action('wp_head', 'generate_map');
+function generate_map() {
+    require_once WP_PLUGIN_DIR . '/novo-map/includes/class-novo-map-gmap.php';
+    require_once WP_PLUGIN_DIR . '/novo-map/includes/class-novo-map-gmap-manager.php';
+    global $wpdb;
+    $gmap_manager = new \Gmap_Manager($wpdb);
+    $gmap = $gmap_manager->get(1);
+    $gmap->set_category('');
+    $gmap->set_name('Alumni');
+    $gmap->set_latitude('');
+    $gmap->set_longitude('');
+    $gmap->set_zoom('');
+    echo '<div class="novomap-map-wrap"><div id="novomapname"></div></div>';
+    $gmap->enqueue_map('novo-map');
+}
