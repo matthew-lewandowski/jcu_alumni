@@ -263,3 +263,17 @@
   }
 
 }
+
+.widget-area {
+  li {
+    pointer-events: none;
+    ul {
+      li {
+        background-color: red;
+      }
+    }
+  }
+}
+.boop{
+  color: blue;
+}
