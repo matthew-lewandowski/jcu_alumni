@@ -16,16 +16,10 @@
             the_title('<h1 class="entry-title">', '</h1>');
         else :
             the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-        endif;
-
-        if (is_active_sidebar('map-1')) :
-            ?>
-        <?php endif; ?>
+        endif; ?>
     </header><!-- .entry-header -->
 
     <section class="post-content">
-        <?php
-        if (!is_active_sidebar('map-1')) : ?>
         <div class="post-content__wrap">
             <aside id="page-secondary" class="widget-area page-sidebar">
                 <div id="map-side">
@@ -39,11 +33,19 @@
 
                         if ($next) :
                             foreach ($next as $cat) :
-                                echo '<ul><li><a href="#">' . $cat->name . '</a>';
-//                                echo '<ul><li onclick="function map() {
-//
-//}" ' . $cat->name . '</ul></li>';
+                                if ($cat->name === "Uncategorized") {
+                                    continue;
+                                }
+                                if ($cat->category_parent > 0) {
+                                    echo '<ul class="childUL"><li class="child" onclick="clickedChild(this)"><p>' . $cat->name . '</p>';
+                                } else {
+                                    echo '<ul><li class="parent" onclick="clickedParent(this)"><p>' . $cat->name . '<i id="symbol" class="fa fa-plus" aria-hidden="true"></i></p>';
+                                }
+//                                echo '<ul><li onclick="clicked(this, ' . $cat->name . ')">' . $cat->name . '</li>';
+
                                 hierarchical_category_tree($cat->term_id);
+
+
                             endforeach;
                         endif;
 
@@ -56,7 +58,6 @@
                 </div><!-- #map-side -->
             </aside><!-- #secondary -->
             <div class="post-content__body">
-                <?php endif; ?>
 
                 <div class="entry-content">
                     <?php
@@ -72,7 +73,6 @@
                         ),
                         get_the_title()
                     ));
-                    generate_map();
                     ?>
                 </div><!-- .entry-content -->
                 <footer class="entry-footer">
@@ -83,6 +83,6 @@
                 if (!is_active_sidebar('map-1')) : ?>
             </div><!-- .post-content__body -->
         </div><!-- .post-content__wrap -->
-    <?php endif; ?>
+        <?php endif; ?>
     </section><!-- #post content -->
 </article><!-- #post-<?php the_ID(); ?> -->

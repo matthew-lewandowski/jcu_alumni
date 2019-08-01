@@ -17,3 +17,14 @@ input[type="submit"] {
     color: black;
   }
 }
+.fa-plus {
+  opacity: 1;
+  float: right;
+  padding-right: 8px;
+  transition: opacity 0.5s ease;
+}
+
+.fa-minus {
+  float: right;
+  padding-right: 8px;
+}
