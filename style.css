@@ -638,6 +638,18 @@ input[type="submit"]:focus {
 	color: black;
 }
 
+.fa-plus {
+	opacity: 1;
+	float: right;
+	padding-right: 8px;
+	transition: opacity 0.5s ease;
+}
+
+.fa-minus {
+	float: right;
+	padding-right: 8px;
+}
+
 input[type="text"],
 input[type="email"],
 input[type="url"],
@@ -1032,6 +1044,10 @@ a:hover, a:active {
 	.single .page .post-content__wrap .post-content__body,
 	.no-sidebar .post-content__wrap .post-content__body {
 		width: 70%;
+	}
+	.single .page .post-content__wrap aside#page-secondary,
+	.no-sidebar .post-content__wrap aside#page-secondary {
+		width: 30%;
 	}
 }
 
@@ -2206,16 +2222,34 @@ button.dropdown-toggle {
 	}
 }
 
-.widget-area li {
-	pointer-events: none;
+.widget-area ul {
+	padding-right: 40px;
+	list-style-type: none;
 }
 
-.widget-area li ul li {
+.widget-area ul li p {
+	padding: 0px 8px;
+}
+
+.widget-area ul li ul {
+	display: none;
+	padding: 0;
+	margin: 0;
+}
+
+.widget-area ul li ul li {
 	background-color: red;
 }
 
-.boop {
-	color: blue;
+.widget-area ul li ul li p {
+	display: block;
+	color: #000;
+	padding: 8px 16px;
+	text-decoration: none;
+}
+
+ul.childUL.show {
+	display: block;
 }
 
 /*--------------------------------------------------------------
