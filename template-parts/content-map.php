@@ -39,7 +39,7 @@
                                 if ($cat->category_parent > 0) {
                                     echo '<ul class="childUL"><li class="child" onclick="clickedChild(this)"><p>' . $cat->name . '</p>';
                                 } else {
-                                    echo '<ul><li class="parent" onclick="clickedParent(this)"><p>' . $cat->name . '<i id="symbol" class="fa fa-plus" aria-hidden="true"></i></p>';
+                                    echo '<ul onclick="clickedParent(this)"><i id="symbol" class="fa fa-plus" aria-hidden="true"></i>' . $cat->name . '<li class="parent">';
                                 }
 //                                echo '<ul><li onclick="clicked(this, ' . $cat->name . ')">' . $cat->name . '</li>';
 
