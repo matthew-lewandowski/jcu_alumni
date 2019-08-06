@@ -4,8 +4,9 @@
  * @param i is the child item
  */
 function clickedChild(i) {
-    var category = i.innerHTML;
-    i.innerHTML = category;
+    var category = i.children[1].innerText;
+    var map = document.getElementById('mapShortcode');
+    console.log(category);
 }
 
 /**

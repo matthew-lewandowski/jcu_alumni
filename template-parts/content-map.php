@@ -8,6 +8,9 @@
  */
 
 ?>
+<?php
+$_SESSION["category"] = $category;
+?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
@@ -40,7 +43,7 @@
                                     continue;
                                 }
                                 if ($cat->category_parent > 0) {
-                                    echo '<ul class="childUL"><li class="child" onclick="clickedChild(this)"><p>' . $cat->name . '</p>';
+                                    echo '<ul class="childUL"><li class="child" onclick="clickedChild(this)"><p>' . $cat->name . '</p><p class="hiden">' . $cat->term_id . '</p>';
                                 } else {
                                     echo '<ul class="parentUL"><i onclick="clickedParent(this)" id="symbol" class="fa fa-plus" aria-hidden="true"></i><p  onclick="clickedParent(this)">' . $cat->name . '</p><li class="parent">';
                                 }
@@ -62,7 +65,7 @@
             </aside><!-- #secondary -->
             <div class="post-content__body">
 
-                <div class="entry-content">
+                <p class="entry-content">
                     <?php
                     the_content(sprintf(
                         wp_kses(
@@ -76,15 +79,17 @@
                         ),
                         get_the_title()
                     ));
+                    echo $category;
                     ?>
-                </div><!-- .entry-content -->
-                <footer class="entry-footer">
-                    <?php jcu_alumni_entry_footer(); ?>
-                </footer><!-- .entry-footer -->
+                <div id="mapShortcode"><?php echo do_shortcode('[novo-map id=1 category ="' . $category . '"]'); ?></div>
+            </div><!-- .entry-content -->
+            <footer class="entry-footer">
+                <?php jcu_alumni_entry_footer(); ?>
+            </footer><!-- .entry-footer -->
 
-                <?php
-                if (!is_active_sidebar('map-1')) : ?>
-            </div><!-- .post-content__body -->
+            <?php
+            if (!is_active_sidebar('map-1')) : ?>
+        </div><!-- .post-content__body -->
         </div><!-- .post-content__wrap -->
         <?php endif; ?>
     </section><!-- #post content -->
