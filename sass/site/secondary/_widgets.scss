@@ -267,35 +267,58 @@
 .widget-area {
 
   ul {
-    padding-right: 40px;
     list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border-top: 4px solid #fff;
+    background-color: $color__sites-grey;
 
-    li {
-      overflow: hidden;
-      overflow-y: auto;
-      max-height: 0;
-      transition: 1s max-height ease;
-      p{
-        padding: 0px 8px;
-      }
-      ul {
-        padding: 0;
-        margin: 0;
+  }
+  ul:hover {
+    background-color: darken($color__sites-grey, 20%);
+  }
 
-        li {
-          background-color: red;
-          max-height: 300px;
-          p{
-            display: block;
-            color: #000;
-            padding: 8px 16px;
-            text-decoration: none;
-          }
+  p {
+    padding: 8px 16px 8px 16px;
+    margin: 0;
+    font-size: 20px;
+  }
+
+  i {
+    padding: 12px 16px 8px 16px;
+    margin: 0;
+  }
+
+  li {
+    overflow: hidden;
+    overflow-y: auto;
+    max-height: 0;
+    transition: .5s max-height ease;
+    li:hover {
+      background-color: darken($color__sites-grey, 10%);
+    }
+    ul {
+      padding: 0;
+      margin: 0;
+
+      li {
+        background-color: $color__sites-grey;
+        max-height: 300px;
+        overflow: hidden;
+
+        p {
+          font-size: 1rem;
+          display: block;
+          color: #000;
+          padding: 8px 16px 8px 24px;
+          margin: 0;
+          text-decoration: none;
         }
       }
     }
   }
 }
+
 li.parent.show {
   max-height: 300px;
   overflow-y: auto;

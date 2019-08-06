@@ -23,6 +23,9 @@
         <div class="post-content__wrap">
             <aside id="page-secondary" class="widget-area page-sidebar">
                 <div id="map-side">
+                    <div>
+                        <p>Search By</p>
+                    </div>
                     <?php
 
                     function hierarchical_category_tree($cat)
@@ -39,7 +42,7 @@
                                 if ($cat->category_parent > 0) {
                                     echo '<ul class="childUL"><li class="child" onclick="clickedChild(this)"><p>' . $cat->name . '</p>';
                                 } else {
-                                    echo '<ul onclick="clickedParent(this)"><i id="symbol" class="fa fa-plus" aria-hidden="true"></i>' . $cat->name . '<li class="parent">';
+                                    echo '<ul class="parentUL"><i onclick="clickedParent(this)" id="symbol" class="fa fa-plus" aria-hidden="true"></i><p  onclick="clickedParent(this)">' . $cat->name . '</p><li class="parent">';
                                 }
 //                                echo '<ul><li onclick="clicked(this, ' . $cat->name . ')">' . $cat->name . '</li>';
 
