@@ -4,8 +4,9 @@
  * @param i is the child item
  */
 function clickedChild(i) {
-    var category = i.innerHTML;
-    i.innerHTML = category;
+    var category = i.children[1].innerText;
+    var map = document.getElementById('mapShortcode');
+    console.log(category);
 }
 
 /**
@@ -13,25 +14,25 @@ function clickedChild(i) {
  * @param i is the parent list item
  */
 function clickedParent(i) {
-    i.classList.add("boop");
+    var parents = document.getElementsByClassName("parentUL");
     var category = i.innerHTML;
-    var children = i.children;
-    var symbol = i.children[0].children[0];
-    symbol.classList.add("fa-minus");
-    symbol.classList.remove("fa-plus");
-    console.log(symbol);
-    i.innerHTML = category;
-    for(var x = 0; x < children.length; x++){
-        var tableChild = children[x];
-        if (tableChild.classList.contains("show")) {
-            tableChild.classList.remove("show");
-            symbol.classList.remove("fa-minus");
-            symbol.classList.add("fa-plus");
-            
-        } else {
-            tableChild.classList.add("show");
-            symbol.classList.add("fa-minus");
-            symbol.classList.remove("fa-plus");
+    var child = i.parentElement.children[2];
+    var symbol = i.parentElement.children[0];
+    
+    if (!child.classList.contains("show")) {
+        for (var i = 0; i < parents.length; i++) {
+            parents[i].children[2].classList.remove("show");
+            parents[i].children[0].classList.remove("fa-minus");
+            parents[i].children[0].classList.add("fa-plus");
         }
+        child.classList.add("show");
+        symbol.classList.remove("fa-plus")
+        symbol.classList.add("fa-minus")
+
+    } else {
+        child.classList.remove("show");
+        symbol.classList.remove("fa-minus")
+        symbol.classList.add("fa-plus")
     }
+
 }

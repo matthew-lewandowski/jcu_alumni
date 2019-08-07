@@ -345,27 +345,3 @@ function jcu_alumni_post_thumbnail_sizes_attr($attr, $attachment, $size)
 }
 
 add_filter('wp_get_attachment_image_attributes', 'jcu_alumni_post_thumbnail_sizes_attr', 10, 3);
-
-function generate_map()
-{
-    require_once WP_PLUGIN_DIR . '/novo-map/includes/class-novo-map-gmap.php';
-    require_once WP_PLUGIN_DIR . '/novo-map/includes/class-novo-map-gmap-manager.php';
-    global $wpdb;
-    $gmap_manager = new \Gmap_Manager($wpdb);
-    $gmap = $gmap_manager->get(1);
-    $gmap->set_category('');
-    $gmap->set_latitude('');
-    $gmap->set_name('alumni');
-    $gmap->set_longitude('');
-    $gmap->set_zoom('');
-    echo '<div class="novomap-map-wrap"><div id="alumni"></div></div>';
-//    $gmap->enqueue_map('novo-map');
-}
-
-
-add_filter('novo_map_allowed_post_type', 'novo_map_post_types');
-function novo_map_post_types($types)
-{
-    $types = array('post', 'page', 'testimonial');
-    return $types;
-}
