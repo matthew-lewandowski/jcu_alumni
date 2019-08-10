@@ -8,9 +8,7 @@
  */
 
 ?>
-<?php
-$_SESSION["category"] = $category;
-?>
+
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
@@ -79,9 +77,8 @@ $_SESSION["category"] = $category;
                         ),
                         get_the_title()
                     ));
-                    echo $category;
                     ?>
-                <div id="mapShortcode"><?php echo do_shortcode('[novo-map id=1 category ="' . $category . '"]'); ?></div>
+                <div id="mapShortcode"><?php echo do_shortcode('[novo-map id=1 category ="0"]'); ?></div>
             </div><!-- .entry-content -->
             <footer class="entry-footer">
                 <?php jcu_alumni_entry_footer(); ?>
