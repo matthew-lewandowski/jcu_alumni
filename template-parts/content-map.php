@@ -21,12 +21,12 @@
     </header><!-- .entry-header -->
 
     <section class="post-content">
+        <div class="search_by">
+            <p>Search By<i onclick="searchBarClicked(this)" id="symbol" class="fa fa-bars" aria-hidden="true"></i></p>
+        </div>
         <div class="post-content__wrap">
             <aside id="page-secondary" class="widget-area page-sidebar">
                 <div id="map-side">
-                    <div>
-                        <p>Search By</p>
-                    </div>
                     <?php
 
                     function hierarchical_category_tree($cat)

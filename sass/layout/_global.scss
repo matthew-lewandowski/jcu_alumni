@@ -55,6 +55,18 @@
     .entry-header {
       text-align: center;
     }
+    .search_by{
+      padding: 8px 16px 8px 16px;
+      margin: 0 0 -30px 0;
+      font-size: 20px;
+      font-weight: bold;
+      p{
+        margin: 0;
+        i{
+          margin-left: 10px;
+        }
+      }
+    }
 
     .post-content__wrap {
 
@@ -66,15 +78,19 @@
       }
 
       .post-content__body {
-        width: 70%;
+        width: 100%;
+        overflow: hidden;
+        transition: width 1s ease;
       }
 
       aside#page-secondary {
-        width: 30%;
+        width: 0;
+        overflow: hidden;
+        transition: width 1s ease,  margin-right 1s ease, opacity 1s ease;
+        opacity: 0;
       }
-
       .widget-area {
-        margin-right: 24px;
+        margin-right: 0;
       }
     }
   }
@@ -86,5 +102,16 @@
   .entry-header {
     text-align: center;
   }
+}
+.show-menu{
+  width: 30% !important;
+  margin-right: 24px!important;
+  opacity: 1!important;
+}
+.small-map{
+  width: 70% !important;
+}
+.hide{
+  display: none;
 }
 
