@@ -8,20 +8,21 @@ var number = 0;
 
 function clickedChild(i) {
     var category = i.children[1].innerText;
-    var shortCode = "[novo-map id=1 category='" + category + "']";
+    var shortCode = ("[novo-map id=1 category='"+category+"']");
+    shortCode = shortCode.replace("", "");
     var map = document.getElementById('mapShortcode');
-    console.log(category);
     number = category;
-    updateMap(shortCode);
-    google.maps.event.trigger(map, 'resize');
+    updateMap(shortCode,category);
+    document.location.reload(false);
 }
-function updateMap(shortCode){
+function updateMap(shortCode, number){
     jQuery.ajax({
         method: 'POST',
         url: '/wp-admin/admin-ajax.php',
         data: {
             action: 'handle_shortcode', //You can pass other parameters to be used in shortcode
-            shortcode_name: shortCode
+            shortcode_name: shortCode,
+            shortcode_number: number,
         },
         success: function(data)
         {
@@ -30,6 +31,7 @@ function updateMap(shortCode){
         }
     });
 }
+
 /**
  * when a parent item is clicked for the map nav, it displays its children
  * @param i is the parent list item

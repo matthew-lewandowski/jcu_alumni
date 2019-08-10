@@ -78,7 +78,7 @@
                         get_the_title()
                     ));
                     ?>
-                <div id="mapShortcode"><?php echo do_shortcode('[novo-map id=1 category ="0"]'); ?></div>
+                <div id="mapShortcode"><?php echo do_shortcode($_SESSION["shortcode"]); ?></div>
             </div><!-- .entry-content -->
             <footer class="entry-footer">
                 <?php jcu_alumni_entry_footer(); ?>
