@@ -267,6 +267,8 @@
 .widget-area {
 
   ul {
+    white-space: nowrap;
+    overflow: hidden;
     list-style-type: none;
     padding: 0;
     margin: 0;

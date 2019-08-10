@@ -8,9 +8,7 @@
  */
 
 ?>
-<?php
-$_SESSION["category"] = $category;
-?>
+
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
@@ -23,12 +21,12 @@ $_SESSION["category"] = $category;
     </header><!-- .entry-header -->
 
     <section class="post-content">
+        <div class="search_by">
+            <p>Search By<i onclick="searchBarClicked(this)" id="symbol" class="fa fa-bars" aria-hidden="true"></i></p>
+        </div>
         <div class="post-content__wrap">
             <aside id="page-secondary" class="widget-area page-sidebar">
                 <div id="map-side">
-                    <div>
-                        <p>Search By</p>
-                    </div>
                     <?php
 
                     function hierarchical_category_tree($cat)
@@ -79,9 +77,8 @@ $_SESSION["category"] = $category;
                         ),
                         get_the_title()
                     ));
-                    echo $category;
                     ?>
-                <div id="mapShortcode"><?php echo do_shortcode('[novo-map id=1 category ="' . $category . '"]'); ?></div>
+                <div id="mapShortcode"><?php echo do_shortcode($_SESSION["shortcode"]); ?></div>
             </div><!-- .entry-content -->
             <footer class="entry-footer">
                 <?php jcu_alumni_entry_footer(); ?>

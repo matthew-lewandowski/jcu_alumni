@@ -6,7 +6,9 @@
  *
  * @package JCU_Alumni
  */
-
+if (!session_id()) {
+    session_start();
+}
 if (!function_exists('jcu_alumni_setup')) :
     /**
      * Sets up theme defaults and registers support for various WordPress features.
@@ -345,3 +347,22 @@ function jcu_alumni_post_thumbnail_sizes_attr($attr, $attachment, $size)
 }
 
 add_filter('wp_get_attachment_image_attributes', 'jcu_alumni_post_thumbnail_sizes_attr', 10, 3);
+
+add_action( 'wp_ajax_nopriv_handle_shortcode', 'handle_shortcode' );
+add_action( 'wp_ajax_handle_shortcode', 'handle_shortcode' );
+
+function handle_shortcode( ) {
+    //$shortcode = $_REQUEST['shortcode_name'];
+    $shortcode_num = $_REQUEST['shortcode_number'];
+    $_SESSION["shortcode"] = "[novo-map id=1 category='" . $shortcode_num . "']";
+    //echo do_shortcode( $shortcode );
+    exit;
+}
+function set_sessions(){
+    if (is_null($_SESSION["shortcode"])){
+        $_SESSION["shortcode"] = "[novo-map id=1 category='0']";
+    } else {
+        return;
+    }
+}
+add_action("init", "set_sessions");
