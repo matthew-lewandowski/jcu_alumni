@@ -78,12 +78,10 @@
                         get_the_title()
                     ));
                     ?>
-                <div id="mapShortcode"><?php echo do_shortcode($_SESSION["shortcode"]); ?></div>
-            </div><!-- .entry-content -->
+                <div id="mapShortcode"><?php echo do_shortcode('[geo_mashup_map map_cat="0"]'); ?></div>
             <footer class="entry-footer">
                 <?php jcu_alumni_entry_footer(); ?>
             </footer><!-- .entry-footer -->
-
             <?php
             if (!is_active_sidebar('map-1')) : ?>
         </div><!-- .post-content__body -->

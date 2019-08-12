@@ -8,12 +8,9 @@ var number = 0;
 
 function clickedChild(i) {
     var category = i.children[1].innerText;
-    var shortCode = ("[novo-map id=1 category='"+category+"']");
-    shortCode = shortCode.replace("", "");
     var map = document.getElementById('mapShortcode');
-    number = category;
-    updateMap(shortCode,category);
-    document.location.reload(false);
+    updateMap(category);
+    //document.location.reload(false);
 }
 
 function searchBarClicked(i) {
@@ -45,13 +42,12 @@ function searchBarClicked(i) {
  * @param shortCode
  * @param number
  */
-function updateMap(shortCode, number){
+function updateMap(number){
     jQuery.ajax({
         method: 'POST',
         url: '/wp-admin/admin-ajax.php',
         data: {
             action: 'handle_shortcode', //You can pass other parameters to be used in shortcode
-            shortcode_name: shortCode,
             shortcode_number: number,
         },
         success: function(data)
