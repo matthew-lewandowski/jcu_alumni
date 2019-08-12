@@ -15,7 +15,7 @@ function clickedChild(i) {
 
 function searchBarClicked(i) {
     var searchMenu = document.getElementById("page-secondary");
-    var map = document.getElementsByClassName("post-content__body")[0];
+    var map = document.getElementById("mapShortcode");
     var symbols = document.getElementsByClassName("fa-plus")[1];
     if (i.classList.contains("fa-bars")) {
         i.classList.remove("fa-bars");

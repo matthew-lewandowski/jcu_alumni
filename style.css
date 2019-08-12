@@ -1052,13 +1052,14 @@ a:hover, a:active {
 	}
 	.single .page .search_by,
 	.no-sidebar .search_by {
-		padding: 8px 16px 8px 16px;
-		margin: 0 0 -30px 0;
+		position: relative;
 		font-size: 20px;
 		font-weight: bold;
+		width: 30%;
 	}
 	.single .page .search_by p,
 	.no-sidebar .search_by p {
+		padding: 8px 16px 16px 16px;
 		margin: 0;
 	}
 	.single .page .search_by p i,
@@ -1071,6 +1072,26 @@ a:hover, a:active {
 		display: flex;
 		-ms-flex-pack: justify;
 		    justify-content: space-between;
+		-ms-flex-direction: column;
+		    flex-direction: column;
+	}
+	.single .page .post-content__wrap .top-row__wrap,
+	.no-sidebar .post-content__wrap .top-row__wrap {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: justify;
+		    justify-content: space-between;
+		-ms-flex-direction: row;
+		    flex-direction: row;
+	}
+	.single .page .post-content__wrap .bottom-row__wrap,
+	.no-sidebar .post-content__wrap .bottom-row__wrap {
+		display: -ms-flexbox;
+		display: flex;
+		-ms-flex-pack: justify;
+		    justify-content: space-between;
+		-ms-flex-direction: row;
+		    flex-direction: row;
 	}
 	.single .page .post-content__wrap .entry-meta,
 	.no-sidebar .post-content__wrap .entry-meta {
@@ -1079,11 +1100,10 @@ a:hover, a:active {
 	.single .page .post-content__wrap .post-content__body,
 	.no-sidebar .post-content__wrap .post-content__body {
 		width: 100%;
-		overflow: hidden;
-		transition: width 1s ease;
 	}
 	.single .page .post-content__wrap aside#page-secondary,
 	.no-sidebar .post-content__wrap aside#page-secondary {
+		margin-top: 0;
 		width: 0;
 		overflow: hidden;
 		transition: width 1s ease,  margin-right 1s ease, opacity 1s ease;
@@ -1101,17 +1121,23 @@ a:hover, a:active {
 }
 
 .show-menu {
-	width: 30% !important;
+	width: 25% !important;
 	margin-right: 24px !important;
 	opacity: 1 !important;
 }
 
 .small-map {
-	width: 70% !important;
+	width: 75% !important;
 }
 
 .hide {
 	display: none;
+}
+
+div#mapShortcode {
+	width: 100%;
+	overflow: hidden;
+	transition: width 1s ease;
 }
 
 /*--------------------------------------------------------------
