@@ -334,3 +334,6 @@ li.parent.show {
 p.hiden {
   display: none !important;
 }
+.darken {
+  background-color: darken($color__sites-grey, 30%) !important;
+}

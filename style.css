@@ -1100,6 +1100,7 @@ a:hover, a:active {
 	.single .page .post-content__wrap .post-content__body,
 	.no-sidebar .post-content__wrap .post-content__body {
 		width: 100%;
+		margin: 0 16px 0 16px;
 	}
 	.single .page .post-content__wrap aside#page-secondary,
 	.no-sidebar .post-content__wrap aside#page-secondary {
@@ -1766,7 +1767,7 @@ button.dropdown-toggle {
 .page-content,
 .entry-content,
 .entry-summary {
-	margin: 1.5em 0 0;
+	margin: 1.5em 16px 0 16px;
 }
 
 .page-links {
@@ -2371,6 +2372,10 @@ li.parent.show {
 
 p.hiden {
 	display: none !important;
+}
+
+.darken {
+	background-color: #9d9d9d !important;
 }
 
 /*--------------------------------------------------------------

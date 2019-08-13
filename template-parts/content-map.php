@@ -9,7 +9,6 @@
 
 ?>
 
-
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
         <?php
@@ -88,7 +87,7 @@
                     </div><!-- #map-side -->
                     <?php endif; ?>
                 </aside><!-- #secondary -->
-                <div id="mapShortcode"><?php echo do_shortcode('[geo_mashup_map map_cat="0"]'); ?></div>
+                <div id="mapShortcode"><?php echo GeoMashup::map('height=600&width=100%&map_cat=0');?></div>
             </div><!-- .bottom-row__wrap -->
         </div><!-- .post-content__wrap -->
     </section><!-- #post content -->

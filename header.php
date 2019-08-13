@@ -16,7 +16,12 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-
+    <script type="text/javascript">
+        function deleteLocal() {
+            localStorage.removeItem('items');
+        }
+        window.onload = deleteLocal();
+    </script>
     <?php wp_head(); ?>
 </head>
 

@@ -352,6 +352,7 @@ function handle_shortcode( ) {
     $shortcode_num = $_REQUEST['shortcode_number'];
     $shortcode = "height=600&width=100%&map_cat=$shortcode_num";
     echo GeoMashup::map($shortcode);
+    echo $shortcode;
     exit;
 }
 add_action( 'wp_ajax_nopriv_handle_shortcode', 'handle_shortcode' );

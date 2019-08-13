@@ -3,16 +3,49 @@
  * with the name of the category
  * @param i is the child item
  */
-
-var number = 0;
-
 function clickedChild(i) {
     var category = i.children[1].innerText;
-    var map = document.getElementById('mapShortcode');
-    updateMap(category);
+    let itemsArray;
+
+
+    if (localStorage.getItem('items')) {
+        itemsArray = JSON.parse(localStorage.getItem('items')); //if localstorage, creates list
+    } else {
+        itemsArray = []; //checks if local storage is set
+    }
+    if (itemsArray.includes(category.toString())){
+        for (var x = itemsArray.length - 1; x >= 0; x--) {
+            if (itemsArray[x] === category){
+                itemsArray.splice(x,1); //removes item if it already exists
+            }
+        }
+    }  else {
+        itemsArray.push(category); //adds item if it doesnt exist.
+    }
+    localStorage.setItem("items", JSON.stringify(itemsArray));
+    var data = JSON.parse(localStorage.getItem('items')).join(); //returns comma seperated string
+
+
+    updateMap(data);
+    changeChildColor(i);
     //document.location.reload(false);
 }
 
+
+/**
+ * simple function that changes the color of whatever is passed over
+ * @param i element to add darken to.
+ */
+function changeChildColor(i) {
+    i.classList.toggle("darken");
+}
+
+
+/**
+ * when the "Search by" button is clicked, it adds classes to change the width
+ * of different elements and toggles the symbol
+ * @param i is the symbol
+ */
 function searchBarClicked(i) {
     var searchMenu = document.getElementById("page-secondary");
     var map = document.getElementById("mapShortcode");
