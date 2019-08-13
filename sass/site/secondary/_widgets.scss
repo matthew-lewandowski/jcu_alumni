@@ -264,6 +264,7 @@
 
 }
 
+
 .widget-area {
 
   ul {
@@ -325,15 +326,37 @@
     }
   }
 }
+@media screen and (min-width: $size__max-width) {
+  .show-menu{
+    width: 25% !important;
+    margin-right: 24px!important;
+    opacity: 1!important;
+  }
+  .small-map{
+    width: 75% !important;
+  }
 
+  div#mapShortcode {
+    width: 100%;
+    overflow: hidden;
+    transition: width 1s ease;
+  }
+}
+
+.darken {
+  background-color: darken($color__sites-grey, 30%) !important;
+}
+.show-menu{
+  opacity: 1 !important;
+  max-height: 1000px !important;
+}
 li.parent.show {
   max-height: 300px;
   overflow-y: auto;
 }
-
+.hide{
+  display: none;
+}
 p.hiden {
   display: none !important;
-}
-.darken {
-  background-color: darken($color__sites-grey, 30%) !important;
 }

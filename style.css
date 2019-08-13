@@ -1050,22 +1050,6 @@ a:hover, a:active {
 	.no-sidebar .entry-header {
 		text-align: center;
 	}
-	.single .page .search_by,
-	.no-sidebar .search_by {
-		position: relative;
-		font-size: 20px;
-		font-weight: bold;
-		width: 30%;
-	}
-	.single .page .search_by p,
-	.no-sidebar .search_by p {
-		padding: 8px 16px 16px 16px;
-		margin: 0;
-	}
-	.single .page .search_by p i,
-	.no-sidebar .search_by p i {
-		margin-left: 10px;
-	}
 	.single .page .post-content__wrap,
 	.no-sidebar .post-content__wrap {
 		display: -ms-flexbox;
@@ -1121,24 +1105,33 @@ a:hover, a:active {
 	text-align: center;
 }
 
-.show-menu {
-	width: 25% !important;
-	margin-right: 24px !important;
-	opacity: 1 !important;
-}
-
-.small-map {
-	width: 75% !important;
-}
-
-.hide {
-	display: none;
-}
-
-div#mapShortcode {
+aside#page-secondary {
+	margin-top: 0;
+	max-height: 0;
 	width: 100%;
 	overflow: hidden;
-	transition: width 1s ease;
+	transition: max-height 0.5s cubic-bezier(1, 0.03, 0.01, 0.88), opacity 0.5s cubic-bezier(1, 0.03, 0.01, 0.88);
+	opacity: 0;
+}
+
+.search_by {
+	position: relative;
+	font-size: 20px;
+	font-weight: bold;
+	width: 30%;
+}
+
+.search_by p {
+	padding: 8px 16px 16px 16px;
+	margin: 0;
+}
+
+.search_by p i {
+	margin-left: 10px;
+}
+
+.post-content__body {
+	margin: 0 16px 0 16px;
 }
 
 /*--------------------------------------------------------------
@@ -2365,17 +2358,42 @@ button.dropdown-toggle {
 	font-weight: normal;
 }
 
+@media screen and (min-width: 1080px) {
+	.show-menu {
+		width: 25% !important;
+		margin-right: 24px !important;
+		opacity: 1 !important;
+	}
+	.small-map {
+		width: 75% !important;
+	}
+	div#mapShortcode {
+		width: 100%;
+		overflow: hidden;
+		transition: width 1s ease;
+	}
+}
+
+.darken {
+	background-color: #9d9d9d !important;
+}
+
+.show-menu {
+	opacity: 1 !important;
+	max-height: 1000px !important;
+}
+
 li.parent.show {
 	max-height: 300px;
 	overflow-y: auto;
 }
 
-p.hiden {
-	display: none !important;
+.hide {
+	display: none;
 }
 
-.darken {
-	background-color: #9d9d9d !important;
+p.hiden {
+	display: none !important;
 }
 
 /*--------------------------------------------------------------

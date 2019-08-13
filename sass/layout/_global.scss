@@ -55,20 +55,6 @@
     .entry-header {
       text-align: center;
     }
-    .search_by{
-      position: relative;
-      font-size: 20px;
-      font-weight: bold;
-      width: 30%;
-      p{
-        padding: 8px 16px 16px 16px;
-        margin: 0;
-        i{
-          margin-left: 10px;
-        }
-      }
-    }
-
     .post-content__wrap {
 
       display: flex;
@@ -116,20 +102,28 @@
     text-align: center;
   }
 }
-.show-menu{
-  width: 25% !important;
-  margin-right: 24px!important;
-  opacity: 1!important;
-}
-.small-map{
-  width: 75% !important;
-}
-.hide{
-  display: none;
-}
-div#mapShortcode {
+aside#page-secondary {
+  margin-top: 0;
+  max-height: 0;
   width: 100%;
   overflow: hidden;
-  transition: width 1s ease;
+  transition: max-height .5s cubic-bezier(1, 0.03, 0.01, 0.88), opacity .5s cubic-bezier(1, 0.03, 0.01, 0.88);
+  opacity: 0;
+}
+.search_by{
+  position: relative;
+  font-size: 20px;
+  font-weight: bold;
+  width: 30%;
+  p{
+    padding: 8px 16px 16px 16px;
+    margin: 0;
+    i{
+      margin-left: 10px;
+    }
+  }
+}
+.post-content__body {
+  margin: 0 16px 0 16px;
 }
 
