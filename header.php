@@ -16,7 +16,12 @@
     <meta charset="<?php bloginfo('charset'); ?>">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="profile" href="https://gmpg.org/xfn/11">
-
+    <script type="text/javascript">
+        function deleteLocal() {
+            localStorage.removeItem('items');
+        }
+        window.onload = deleteLocal();
+    </script>
     <?php wp_head(); ?>
 </head>
 
@@ -68,7 +73,7 @@
 <!--    --><?php //if (get_header_image() && is_front_page()) : //this will only display header image on front page ?>
     <?php if (get_header_image()) : //this will only display header image ?>
         <figure class="header-image">
-            <?php the_header_image_tag(); ?>
+            <?php get_template_part('template-parts/content', 'carousel'); ?>
         </figure><!-- #header-image -->
     <?php endif; //End header image check. ?>
     <div id="content" class="site-content">
