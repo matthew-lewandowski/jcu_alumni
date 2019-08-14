@@ -1268,12 +1268,12 @@ aside#page-secondary {
 .header-image img {
 	display: block;
 	width: 100%;
-	max-height: 14em;
+	height: 350px;
 }
 
 @media screen and (min-width: 769px) {
 	.header-image img {
-		max-height: 512px;
+		height: 620px;
 	}
 }
 

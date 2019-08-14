@@ -211,7 +211,11 @@ function jcu_alumni_scripts()
 
     wp_enqueue_style('jcu_alumni-style', get_stylesheet_uri());
 
+    wp_enqueue_style('jcu_alumni-bootstrap', get_template_directory_uri() . '/bootstrap/css/bootstrap.min.css');
+
     wp_enqueue_style('jcu_alumni-icons', '//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css', '', '20191627');
+
+    wp_enqueue_script('jcu_alumni-boostrap-js', get_template_directory_uri() . '/bootstrap/js/bootstrap.min.js', array('jquery'), '4.3.1', true);
 
     wp_enqueue_script('jcu_alumni-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), '20151215', true);
 
@@ -348,11 +352,64 @@ function jcu_alumni_post_thumbnail_sizes_attr($attr, $attachment, $size)
 
 add_filter('wp_get_attachment_image_attributes', 'jcu_alumni_post_thumbnail_sizes_attr', 10, 3);
 
-function handle_shortcode( ) {
+function handle_shortcode()
+{
     $shortcode_num = $_REQUEST['shortcode_number'];
     $shortcode = "height=600&width=100%&map_cat=$shortcode_num";
     echo GeoMashup::map($shortcode);
     exit;
 }
-add_action( 'wp_ajax_nopriv_handle_shortcode', 'handle_shortcode' );
-add_action( 'wp_ajax_handle_shortcode', 'handle_shortcode' );
+
+add_action('wp_ajax_nopriv_handle_shortcode', 'handle_shortcode');
+add_action('wp_ajax_handle_shortcode', 'handle_shortcode');
+
+
+/**
+ * Add a header on top of the image and URL fields to linked page
+ *
+ * @param $form_fields array, fields to include in attachment form
+ * @param $post object, attachment record in database
+ * @return $form_fields, modified form fields
+ */
+
+function be_attachment_field_credit($form_fields, $post)
+{
+    $form_fields['be-image-header'] = array(
+        'label' => 'Image Header',
+        'input' => 'text',
+        'value' => get_post_meta($post->ID, 'be-image-header', true),
+        'helps' => 'If provided, Will display on top of header image',
+    );
+
+    $form_fields['be-page-url'] = array(
+        'label' => 'Page URL',
+        'input' => 'text',
+        'value' => get_post_meta($post->ID, 'be_photographer_url', true),
+        'helps' => 'Add Link to intended page as header image',
+    );
+
+    return $form_fields;
+}
+
+add_filter('attachment_fields_to_edit', 'be_attachment_field_credit', 10, 2);
+
+/**
+ * Save values of Photographer Name and URL in media uploader
+ *
+ * @param $post array, the post data for database
+ * @param $attachment array, attachment fields from $_POST form
+ * @return $post array, modified post data
+ */
+
+function be_attachment_field_credit_save($post, $attachment)
+{
+    if (isset($attachment['be-image-header']))
+        update_post_meta($post['ID'], 'be_image_header', $attachment['be-image-header']);
+
+    if (isset($attachment['be-page-url']))
+        update_post_meta($post['ID'], 'be_page_url', esc_url($attachment['be-page-url']));
+
+    return $post;
+}
+
+add_filter('attachment_fields_to_save', 'be_attachment_field_credit_save', 10, 2);
