@@ -2,13 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="4bf0d374-dabb-4b12-8557-3dc1cd42891b" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/sass/site/header/_carousel.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/header.php" beforeDir="false" afterPath="$PROJECT_DIR$/header.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/layout/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/layout/_global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sass/maps/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/sass/maps/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/site/header/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/site/header/_carousel.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sass/site/header/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/site/header/_header.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template-parts/content-carousel.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-carousel.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -19,24 +21,19 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/functions.php">
+        <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="357">
-              <caret line="223" column="134" selection-start-line="223" selection-start-column="134" selection-end-line="223" selection-end-column="134" />
+            <state relative-caret-position="323">
+              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/sass/site/header/_carousel.scss">
-          <provider selected="true" editor-type-id="text-editor" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
+        <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="89" selection-start-line="9" selection-start-column="89" selection-end-line="9" selection-end-column="89" />
+            <state relative-caret-position="1032">
+              <caret line="408" column="95" selection-start-line="408" selection-start-column="78" selection-end-line="408" selection-end-column="98" />
             </state>
           </provider>
         </entry>
@@ -73,24 +70,23 @@
         <option value="$PROJECT_DIR$/template-parts/map.php" />
         <option value="$PROJECT_DIR$/js/refreshScripts.js" />
         <option value="$PROJECT_DIR$/js/refresh-scripts.js" />
-        <option value="$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss" />
         <option value="$PROJECT_DIR$/js/map-widget.js" />
         <option value="$PROJECT_DIR$/template-parts/content-map.php" />
         <option value="$PROJECT_DIR$/sass/site/secondary/_widgets.scss" />
-        <option value="$PROJECT_DIR$/sass/layout/_global.scss" />
-        <option value="$PROJECT_DIR$/sass/site/header/_header.scss" />
-        <option value="$PROJECT_DIR$/sass/site/header/_carousel.scss" />
         <option value="$PROJECT_DIR$/js/carousel.js" />
         <option value="$PROJECT_DIR$/header.php" />
+        <option value="$PROJECT_DIR$/sass/layout/_global.scss" />
+        <option value="$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss" />
+        <option value="$PROJECT_DIR$/sass/site/header/_header.scss" />
+        <option value="$PROJECT_DIR$/sass/site/header/_carousel.scss" />
         <option value="$PROJECT_DIR$/template-parts/content-carousel.php" />
         <option value="$PROJECT_DIR$/functions.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-12" />
-    <option name="width" value="1978" />
-    <option name="height" value="2092" />
+    <option name="width" value="1225" />
+    <option name="height" value="1400" />
   </component>
   <component name="ProjectView">
     <navigator proportions="" version="1">
@@ -119,6 +115,12 @@
               <item name="jcu_alumni" type="b2602c69:ProjectViewProjectNode" />
               <item name="jcu_alumni" type="462c0819:PsiDirectoryNode" />
               <item name="sass" type="462c0819:PsiDirectoryNode" />
+              <item name="layout" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jcu_alumni" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jcu_alumni" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
               <item name="site" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -127,6 +129,13 @@
               <item name="sass" type="462c0819:PsiDirectoryNode" />
               <item name="site" type="462c0819:PsiDirectoryNode" />
               <item name="header" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="jcu_alumni" type="b2602c69:ProjectViewProjectNode" />
+              <item name="jcu_alumni" type="462c0819:PsiDirectoryNode" />
+              <item name="sass" type="462c0819:PsiDirectoryNode" />
+              <item name="site" type="462c0819:PsiDirectoryNode" />
+              <item name="primary" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="jcu_alumni" type="b2602c69:ProjectViewProjectNode" />
@@ -190,18 +199,18 @@
       <workItem from="1564550811126" duration="52826000" />
       <workItem from="1564819603745" duration="35448000" />
       <workItem from="1565408091776" duration="52954000" />
-      <workItem from="1565675394794" duration="23244000" />
+      <workItem from="1565675394794" duration="36082000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="164472000" />
+    <option name="totallyTimeSpent" value="177310000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-6" y="0" width="989" height="1046" extended-state="0" />
+    <frame x="0" y="0" width="1225" height="1400" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.24489796" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.21459228" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -398,24 +407,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template-parts/geo-mashup-info-window.php" />
-    <entry file="file://$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="327">
-          <caret line="144" column="3" lean-forward="true" selection-start-line="144" selection-start-column="3" selection-end-line="144" selection-end-column="3" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/sass/site/secondary/_widgets.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="5848">
           <caret line="344" selection-start-line="344" selection-end-line="344" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/layout/_global.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1109">
-          <caret line="123" column="3" lean-forward="true" selection-start-line="123" selection-start-column="3" selection-end-line="123" selection-end-column="3" />
         </state>
       </provider>
     </entry>
@@ -439,13 +434,6 @@
     <entry file="file://$PROJECT_DIR$/sass/site/header/_header-menu.scss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-1773" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/site/header/_header.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1151">
-          <caret line="100" column="17" selection-start-line="100" selection-start-column="17" selection-end-line="100" selection-end-column="17" />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/index.php">
@@ -502,29 +490,50 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/sass/layout/_global.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="22" lean-forward="true" selection-start-line="17" selection-start-column="22" selection-end-line="17" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/site/header/_header.scss">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
     <entry file="file://$PROJECT_DIR$/header.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-302">
-          <caret line="17" column="55" lean-forward="true" selection-start-line="17" selection-start-column="55" selection-end-line="17" selection-end-column="55" />
+        <state relative-caret-position="797">
+          <caret line="60" column="67" lean-forward="true" selection-start-line="60" selection-start-column="67" selection-end-line="60" selection-end-column="67" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="680">
+          <caret line="40" column="3" lean-forward="true" selection-start-line="39" selection-start-column="18" selection-end-line="40" selection-end-column="3" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/sass/site/header/_carousel.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="89" selection-start-line="9" selection-start-column="89" selection-end-line="9" selection-end-column="89" />
+        <state relative-caret-position="323">
+          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="223" column="134" selection-start-line="223" selection-start-column="134" selection-end-line="223" selection-end-column="134" />
+        <state relative-caret-position="1032">
+          <caret line="408" column="95" selection-start-line="408" selection-start-column="78" selection-end-line="408" selection-end-column="98" />
         </state>
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/sass/site/header/_carousel.scss">
-      <provider selected="true" editor-type-id="text-editor" />
     </entry>
   </component>
 </project>

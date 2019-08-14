@@ -5,6 +5,8 @@
  * Date: 8/13/2019
  * Time: 4:41 PM
  */
+
+
 if (is_front_page()) { //displays if it is the front page
     ?>
     <div id="carousel-1" class="carousel slide" data-ride="carousel" data-interval="12000">
@@ -17,18 +19,24 @@ if (is_front_page()) { //displays if it is the front page
                     ?>
                     <div class="carousel-item active">
                         <img class="d-block w-100" src="<?php echo $header['url']; ?>" alt="slide"/>
-                        <div class="carousel-caption d-non d-md-block">
-                            <h5>This is the title</h5>
-                            <p>this is the description</p>
+                        <div class="carousel-caption-header d-non d-md-block">
+                            <?php
+                            $id = $header['attachment_id'];
+                            ?>
+                            <h5><?php echo get_post_meta($id, 'be-image-header', true ); ?></h5>
+                            <p><?php echo get_post_meta($id, 'be-image-header-desc',true );?></p>
                         </div>
                     </div>
                     <?php $bool = true;
                 } else { ?>
                     <div class="carousel-item">
                         <img class="d-block w-100" src="<?php echo $header['url']; ?>" alt="slide"/>
-                        <div class="carousel-caption d-non d-md-block">
-                            <h5>This is the title</h5>
-                            <p>this is the description</p>
+                        <div class="carousel-caption-header d-non d-md-block">
+                            <?php
+                            $id = $header['attachment_id'];
+                            ?>
+                            <h5><?php echo get_post_meta($id, 'be-image-header', true); ?></h5>
+                            <p><?php echo get_post_meta($id, 'be-image-header-desc',true );?></p>
                         </div>
                     </div>
                 <?php }
@@ -44,6 +52,8 @@ if (is_front_page()) { //displays if it is the front page
         </a>
     </div><!--#carousel-1-->
     <?php
+
 } else { //displays if it is not the front page
     the_header_image_tag();
 }
+

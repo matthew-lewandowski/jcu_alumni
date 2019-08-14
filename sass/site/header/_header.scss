@@ -1,16 +1,3 @@
-.header-image {
-  background-size: cover;
-  background-position: center center;
-  overflow: hidden;
-  img {
-    display: block;
-    width: 100%;
-    height: 350px;
-    @media screen and (min-width: $query_medium) {
-      height: 620px;
-    }
-  }
-}
 
 .site-header {
   position: relative;
@@ -89,7 +76,7 @@
 }
 
 .spacer {
-  background-color: $color__sites-grey;
+  background-color: #ffffff;
   height: 30px;
 }
 /*

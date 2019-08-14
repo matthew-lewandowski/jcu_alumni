@@ -313,15 +313,15 @@ add_filter('wp_calculate_image_sizes', 'jcu_alumni_content_image_sizes_attr', 10
  * @param array $attr Array of the attributes for the image tag.
  * @return string The filtered header image HTML.
  */
-function jcu_alumni_header_image_tag($html, $header, $attr)
-{
-    if (isset($attr['sizes'])) {
-        $html = str_replace($attr['sizes'], '100vw', $html);
-    }
-    return $html;
-}
-
-add_filter('get_header_image_tag', 'jcu_alumni_header_image_tag', 10, 3);
+//function jcu_alumni_header_image_tag($html, $header, $attr)
+//{
+//    if (isset($attr['sizes'])) {
+//        $html = str_replace($attr['sizes'], '100vw', $html);
+//    }
+//    return $html;
+//}
+//
+//add_filter('get_header_image_tag', 'jcu_alumni_header_image_tag', 10, 3);
 
 /**
  * Add custom image sizes attribute to enhance responsive image functionality
@@ -381,11 +381,11 @@ function be_attachment_field_credit($form_fields, $post)
         'helps' => 'If provided, Will display on top of header image',
     );
 
-    $form_fields['be-page-url'] = array(
-        'label' => 'Page URL',
+    $form_fields['be-image-header-desc'] = array(
+        'label' => 'Image Header Description',
         'input' => 'text',
-        'value' => get_post_meta($post->ID, 'be_photographer_url', true),
-        'helps' => 'Add Link to intended page as header image',
+        'value' => get_post_meta($post->ID, 'be-image-header-desc', true),
+        'helps' => 'Image header description',
     );
 
     return $form_fields;
@@ -404,11 +404,9 @@ add_filter('attachment_fields_to_edit', 'be_attachment_field_credit', 10, 2);
 function be_attachment_field_credit_save($post, $attachment)
 {
     if (isset($attachment['be-image-header']))
-        update_post_meta($post['ID'], 'be_image_header', $attachment['be-image-header']);
-
-    if (isset($attachment['be-page-url']))
-        update_post_meta($post['ID'], 'be_page_url', esc_url($attachment['be-page-url']));
-
+        update_post_meta($post[ 'ID' ], 'be-image-header', $attachment[ 'be-image-header' ]);
+    if (isset($attachment['be-image-header-desc']))
+        update_post_meta($post[ 'ID' ], 'be-image-header-desc', $attachment[ 'be-image-header-desc' ]);
     return $post;
 }
 
