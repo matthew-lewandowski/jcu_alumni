@@ -24,6 +24,51 @@
     font-weight: 300;
   }
 }
+.pos-1{
+  bottom: 10%;
+}
+.pos-2{
+  bottom: 40%;
+}
+.pos-3{
+  bottom: 75%;
+}
+.pos-4{
+  right: 0;
+  left: unset;
+  bottom: 10%;
+}
+.pos-5{
+  right: 0;
+  left: unset;
+  bottom: 40%;
+}
+.pos-6{
+  right: 0;
+  left: unset;
+  bottom: 75%;
+}
+.color-1{
+  background-color: rgba(red,0.8);
+}
+.color-2{
+  background-color: rgba(blue,0.8);
+}
+.color-3{
+  background-color: rgba(yellow,0.8);
+}
+.color-4{
+  background-color: rgba(orange,0.8);
+}
+.color-5{
+  background-color: rgba(green,0.8);
+}
+.color-6{
+  background-color: rgba(purple,0.8);
+}
+.color-7{
+  background-color: rgba(pink,0.8);
+}
 @media screen and (max-width: $query_medium) {
   .carousel-caption-header{
     max-width: 80%;

@@ -4,11 +4,8 @@
     <list default="true" id="4bf0d374-dabb-4b12-8557-3dc1cd42891b" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/functions.php" beforeDir="false" afterPath="$PROJECT_DIR$/functions.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sass/layout/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/layout/_global.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sass/maps/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/sass/maps/style.css.map" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/sass/site/header/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/site/header/_carousel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sass/site/header/_header.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/site/header/_header.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template-parts/content-carousel.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-carousel.php" afterDir="false" />
     </list>
@@ -20,20 +17,29 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+            <state relative-caret-position="765">
+              <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/sass/site/header/_carousel.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="578">
+              <caret line="49" column="1" lean-forward="true" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1032">
-              <caret line="408" column="95" selection-start-line="408" selection-start-column="78" selection-end-line="408" selection-end-column="98" />
+            <state relative-caret-position="1052">
+              <caret line="423" column="50" lean-forward="true" selection-start-line="422" selection-start-column="69" selection-end-line="423" selection-end-column="50" />
             </state>
           </provider>
         </entry>
@@ -78,14 +84,14 @@
         <option value="$PROJECT_DIR$/sass/layout/_global.scss" />
         <option value="$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss" />
         <option value="$PROJECT_DIR$/sass/site/header/_header.scss" />
+        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/sass/site/header/_carousel.scss" />
         <option value="$PROJECT_DIR$/template-parts/content-carousel.php" />
-        <option value="$PROJECT_DIR$/functions.php" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1225" />
+    <option name="width" value="1146" />
     <option name="height" value="1400" />
   </component>
   <component name="ProjectView">
@@ -200,17 +206,18 @@
       <workItem from="1564819603745" duration="35448000" />
       <workItem from="1565408091776" duration="52954000" />
       <workItem from="1565675394794" duration="36082000" />
+      <workItem from="1565831888683" duration="3222000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="177310000" />
+    <option name="totallyTimeSpent" value="180532000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1225" height="1400" extended-state="0" />
+    <frame x="0" y="0" width="1146" height="1400" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.21459228" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.23020259" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -439,19 +446,9 @@
     <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/slick/slick/slick-theme.css">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slick/slick/slick-theme.scss">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/slick/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="12" lean-forward="true" selection-start-line="11" selection-start-column="5" selection-end-line="47" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/slick/slick/slick-theme.css" />
+    <entry file="file://$PROJECT_DIR$/slick/slick/slick-theme.scss" />
+    <entry file="file://$PROJECT_DIR$/slick/index.html" />
     <entry file="file://$PROJECT_DIR$/js/map-widget.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="612">
@@ -459,9 +456,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/carousel.js">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
+    <entry file="file://$PROJECT_DIR$/js/carousel.js" />
     <entry file="file://$PROJECT_DIR$/bootstrap/js/bootstrap.js">
       <provider selected="true" editor-type-id="text-editor">
         <state>
@@ -516,22 +511,22 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/site/header/_carousel.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="25" column="1" lean-forward="true" selection-start-line="25" selection-start-column="1" selection-end-line="25" selection-end-column="1" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="24" column="30" lean-forward="true" selection-start-line="24" selection-start-column="30" selection-end-line="24" selection-end-column="30" />
+        <state relative-caret-position="578">
+          <caret line="49" column="1" lean-forward="true" selection-start-line="49" selection-start-column="1" selection-end-line="49" selection-end-column="1" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/functions.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1032">
-          <caret line="408" column="95" selection-start-line="408" selection-start-column="78" selection-end-line="408" selection-end-column="98" />
+        <state relative-caret-position="1052">
+          <caret line="423" column="50" lean-forward="true" selection-start-line="422" selection-start-column="69" selection-end-line="423" selection-end-column="50" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="50" column="25" lean-forward="true" selection-start-line="50" selection-start-column="25" selection-end-line="50" selection-end-column="25" />
         </state>
       </provider>
     </entry>

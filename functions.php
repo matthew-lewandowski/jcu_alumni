@@ -388,6 +388,20 @@ function be_attachment_field_credit($form_fields, $post)
         'helps' => 'Image header description',
     );
 
+    $form_fields['be-image-header-pos'] = array(
+        'label' => 'Image Header Position',
+        'input' => 'text',
+        'value' => get_post_meta($post->ID, 'be-image-header-pos', true),
+        'helps' => 'Image header Position: 1=LeftBottom 2=LeftMiddle 3=LeftTop 4=RightBottom 5=RightMiddle 6=RightTop',
+    );
+
+    $form_fields['be-image-header-color'] = array(
+        'label' => 'Image Header Color',
+        'input' => 'text',
+        'value' => get_post_meta($post->ID, 'be-image-header-color', true),
+        'helps' => '1=Red 2=Blue 3=Yellow 4=Orange 5=Green 6=Purple 7=Pink',
+    );
+
     return $form_fields;
 }
 
@@ -407,6 +421,10 @@ function be_attachment_field_credit_save($post, $attachment)
         update_post_meta($post[ 'ID' ], 'be-image-header', $attachment[ 'be-image-header' ]);
     if (isset($attachment['be-image-header-desc']))
         update_post_meta($post[ 'ID' ], 'be-image-header-desc', $attachment[ 'be-image-header-desc' ]);
+    if (isset($attachment['be-image-header-pos']))
+        update_post_meta($post[ 'ID' ], 'be-image-header-pos', $attachment[ 'be-image-header-pos' ]);
+    if (isset($attachment['be-image-header-color']))
+        update_post_meta($post[ 'ID' ], 'be-image-header-color', $attachment[ 'be-image-header-color' ]);
     return $post;
 }
 
