@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bf0d374-dabb-4b12-8557-3dc1cd42891b" name="Default Changelist" comment="" />
+    <list default="true" id="4bf0d374-dabb-4b12-8557-3dc1cd42891b" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/sass/maps/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/sass/maps/style.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/sass/site/header/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/site/header/_carousel.scss" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,8 +26,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sass/site/header/_carousel.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+            <state relative-caret-position="680">
+              <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -31,8 +35,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/functions.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1052">
-              <caret line="423" column="50" lean-forward="true" selection-start-line="422" selection-start-column="69" selection-end-line="423" selection-end-column="50" />
+            <state relative-caret-position="542">
+              <caret line="153" column="37" lean-forward="true" selection-start-line="153" selection-start-column="37" selection-end-line="153" selection-end-column="37" />
             </state>
           </provider>
         </entry>
@@ -77,14 +81,14 @@
         <option value="$PROJECT_DIR$/sass/layout/_global.scss" />
         <option value="$PROJECT_DIR$/sass/site/primary/_posts-and-pages.scss" />
         <option value="$PROJECT_DIR$/sass/site/header/_header.scss" />
-        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/template-parts/content-carousel.php" />
+        <option value="$PROJECT_DIR$/functions.php" />
         <option value="$PROJECT_DIR$/sass/site/header/_carousel.scss" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="width" value="1146" />
+    <option name="width" value="1051" />
     <option name="height" value="1400" />
   </component>
   <component name="ProjectView">
@@ -199,12 +203,12 @@
       <workItem from="1564819603745" duration="35448000" />
       <workItem from="1565408091776" duration="52954000" />
       <workItem from="1565675394794" duration="36082000" />
-      <workItem from="1565831888683" duration="3764000" />
+      <workItem from="1565831888683" duration="4663000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="181074000" />
+    <option name="totallyTimeSpent" value="181973000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1146" height="1400" extended-state="0" />
@@ -502,13 +506,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/functions.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1052">
-          <caret line="423" column="50" lean-forward="true" selection-start-line="422" selection-start-column="69" selection-end-line="423" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/template-parts/content-carousel.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="561">
@@ -516,10 +513,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/functions.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="542">
+          <caret line="153" column="37" lean-forward="true" selection-start-line="153" selection-start-column="37" selection-end-line="153" selection-end-column="37" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/sass/site/header/_carousel.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="41" column="7" lean-forward="true" selection-start-line="41" selection-start-column="7" selection-end-line="41" selection-end-column="7" />
+        <state relative-caret-position="680">
+          <caret line="40" column="30" lean-forward="true" selection-start-line="40" selection-start-column="30" selection-end-line="40" selection-end-column="30" />
         </state>
       </provider>
     </entry>
