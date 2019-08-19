@@ -7,8 +7,7 @@
  */
 
 
-if (is_front_page()) { //displays if it is the front page
-    ?>
+?>
     <div id="carousel-1" class="carousel slide" data-ride="carousel" data-interval="12000">
         <div class="carousel-inner">
             <?php
@@ -71,9 +70,4 @@ if (is_front_page()) { //displays if it is the front page
             <span class="sr-only">Next</span>
         </a>
     </div><!--#carousel-1-->
-    <?php
-
-} else { //displays if it is not the front page
-    the_header_image_tag();
-}
 

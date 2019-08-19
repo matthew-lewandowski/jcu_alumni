@@ -163,13 +163,18 @@ function jcu_alumni_post_navigation() {
             '<span class="post-title">%title</span>',
     ) );
 }
-/**
- *  Customize ellipsis at the end of excerpts
- */
-function jcu_alumni_excerpt_more ($more){
-    return "...";
+
+function jcu_alumni_excerpt_more( $more ) {
+    if ( ! is_single() ) {
+        $more = sprintf( '<a class="read-more" href="%1$s">%2$s</a>',
+            get_permalink( get_the_ID() ),
+            __( '...Read More', 'textdomain' )
+        );
+    }
+
+    return $more;
 }
-add_filter('excerpt_more', 'jcu_alumni_excerpt_more');
+add_filter( 'excerpt_more', 'jcu_alumni_excerpt_more' );
 
 /**
  *  Filter excerpt length to 100 words
