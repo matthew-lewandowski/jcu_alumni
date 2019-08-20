@@ -11,6 +11,9 @@ $args = array('category' => 25, 'post_type' => 'post');
 $posts = get_posts($args);
 $bool = false;
 ?>
+<div class="top-bar">
+    <h5>Come check out our Outstanding Alumni</h5>
+</div>
     <div id="highlight-carousel" class="carousel slide w-100" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <?php foreach ($posts as $post) : setup_postdata($post);
@@ -64,3 +67,6 @@ $bool = false;
             <span class="sr-only">Next</span>
         </a>
     </div><!-- #highlight-carousel -->
+<div class="bottom-bar">
+    <h5>Making a difference in today's world</h5>
+</div>

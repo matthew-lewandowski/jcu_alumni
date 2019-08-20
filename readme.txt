@@ -1,38 +1,78 @@
 === JCU_Alumni ===
 
-Contributors: Matthew Lewandowski, Marina Sugita
 Tags: custom-background, custom-logo, custom-menu, featured-images, threaded-comments, translation-ready
 
 Requires at least: 4.5
-Tested up to: 4.8
+Tested up to: 5.2.2
 Stable tag: 1.0.0
 License: GNU General Public License v2 or later
 License URI: LICENSE
 
-A starter theme called JCU_Alumni.
+## Alumni Wordpress Theme
 
-== Description ==
+## Contents of this readme
+- [Introduction](#introduction)
+- [Prerequisites](#prerequisites)
+- [Workflow](#workflow)
+- [Wordpress](#wordpress)
+- [Contributors](#contributors)
+- [Linkedin](#linkedin)
+- [Frequently Asked Questions](#frequently asked questions)
 
-A custom theme for the james cook university alumni
+## Introduction
+Project repository containing all necessary requirements, instructions and details to implement a website the 
+"JCU Alumni", a University in Australia.
 
-== Installation ==
+## Prerequisites
+In order for the theme to operate, a few plugins are needed.
+- [Geo Mashup](https://wordpress.org/plugins/geo-mashup/)
+- [Max Mega Menu](https://wordpress.org/plugins/megamenu/)
 
-1. In your admin panel, go to Appearance > Themes and click the Add New button.
-2. Click Upload Theme and Choose File, then select the theme's .zip file. Click Install Now.
-3. Click Activate to use your new theme right away.
+## Workflow:
 
-== Frequently Asked Questions ==
+### Development:
+- Vagrant
+- Oracle VM Virtual Box
+- Wordpress Distillery
+- PHP Storm
+- Gulp
+- Git Bash
 
-= Does this theme support any plugins? =
+### Collaboration:
+- [Slack](https://slack.com/intl/en-au/)
+- [Trello](https://trello.com/b/7vry2Xm0/team-20-cp3402-a2)
+- [Github](https://github.com/)
 
-JCU_Alumni includes support for Infinite Scroll in Jetpack.
+### Deployment:
+- Git Bash
+- Webhooks
+- Digital Ocean Console
+- SSH through PuTTY
 
-== Changelog ==
+## Wordpress:
+- **Version**: 5.2.2
+- **Theme**: [Underscores](http://underscores.me/)
+- **Staging Site**: [jcualumni.tk](http://jcualumni.tk/)
+- **Production Site**: TBD
 
-= 1.0 - May 12 2015 =
-* Initial release
+## Contributors:
+- **[Matthew Lewandowski](https://github.com/matthew-lewandowski)** - Theme Design / Content Design / Features
 
-== Credits ==
+## Linkedin:
+- **[Matthew Lewandowski](https://www.linkedin.com/in/Matthew-Lewandowski93/)**
 
-* Based on Underscores https://underscores.me/, (C) 2012-2017 Automattic, Inc., [GPLv2 or later](https://www.gnu.org/licenses/gpl-2.0.html)
-* normalize.css https://necolas.github.io/normalize.css/, (C) 2012-2016 Nicolas Gallagher and Jonathan Neal, [MIT](https://opensource.org/licenses/MIT)
+## Frequently Asked Questions:
+1.) How do I add/delete images to the header carousel?
+- In the back end of the site, go to Appearance/customize/header image.
+- Then simply add or delete images as needed.
+- please note, if you are crop the image, it will not display with any of the information you may add when uploading the image.
+
+2.) How can I add a title/description/color/placement to a header image?
+- In the backend, either when uploading a new image or excisting image, you go to media.
+- Select the image you wish to use, and fill in the bottom 4 meta fields.
+
+3.) How do I add a location to a post?
+- When editing the post, at the very bottom there is a miniture map. simply click on the map and it will add the location.
+- Please note, the plugin Geo Mashup must be installed.
+
+4.) How do I add/delete social media icons in the footer?
