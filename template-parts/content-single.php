@@ -10,85 +10,80 @@
 ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-    <header class="entry-header">
-        <?php
-        if (is_singular()) :
-            the_title('<h1 class="entry-title">', '</h1>');
-        else :
-            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-        endif;
+    <div class="bio">
 
-        if (is_active_sidebar('sidebar-1')) :
+        <?php
+        if (has_post_thumbnail()) { ?>
+            <figure class="featured-image bio-image">
+                <?php the_post_thumbnail(); ?>
+                <?php jcu_alumni_post_navigation(); ?>
+            </figure><!-- .featured-image bio-image -->
+        <?php } ?>
+        <div class="bio-content-wrap">
+            <header class="entry-header-bio">
+                <?php
+                if (is_singular()) :
+                    the_title('<h1 class="entry-title">', '</h1>');
+                else :
+                    the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+                endif; ?>
+            </header><!-- .entry-header-bio -->
+            <?php
+            $id = $post->ID;
+            $year = "Unknown";
+            $degree = "Unknown";
+            $university = "Unknown";
+            $next = get_the_category($id);
+            if ($next) :
+                foreach ($next as $cat) :
+                    $parent = get_cat_name($cat->parent);
+                    if ($parent === "Year") {
+                        $year = $cat->name;
+                    } elseif ($parent === "Degree") {
+                        $degree = $cat->name;
+                    } elseif ($parent === "University") {
+                        $university = $cat->name;
+                    }
+                endforeach;
+            endif;
             ?>
-            <div class="entry-meta">
-                <?php
-                jcu_alumni_posted_by();
-                jcu_alumni_posted_on();
-                ?>
-            </div><!-- .entry-meta -->
-        <?php endif; ?>
-    </header><!-- .entry-header -->
+            <div class="bio-meta">
+                <div class="meta-wrap"><h4>Degree:<h5><?php echo $degree?></h5></h4></div>
+                <div class="meta-wrap"><h4>Year:<h5><?php echo $year?></h5></div>
+                <div class="meta-wrap"><h4>University:<h5><?php echo $university?></h5></h4></div>
+            </div>
+            <section class="post-content-bio">
+                <div class="post-content__wrap">
+                    <div class="entry-meta">
+                        <div class="post-content__body">
+                            <div class="entry-content">
 
-    <?php
-    if ( has_post_thumbnail()){ ?>
-            <figure class="featured-image full-bleed">
-        <?php the_post_thumbnail('jcu_alumni-full-bleed'); ?>
-    </figure><!-- .featured-image full-bleed -->
-    <?php } ?>
-
-    <section class="post-content">
-
-        <?php
-        if (!is_active_sidebar('sidebar-1')) : ?>
-        <div class="post-content__wrap">
-            <div class="entry-meta">
-                <?php
-                jcu_alumni_posted_by();
-                jcu_alumni_posted_on(); ?>
-            </div><!-- .entry-meta -->
-            <div class="post-content__body">
-                <?php endif; ?>
-
-                <div class="entry-content">
-                    <?php
-                    the_content(sprintf(
-                        wp_kses(
-                        /* translators: %s: Name of current post. Only visible to screen readers */
-                            __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'jcu_alumni'),
-                            array(
-                                'span' => array(
-                                    'class' => array(),
-                                ),
-                            )
-                        ),
-                        get_the_title()
-                    ));
-
-                    wp_link_pages(array(
-                        'before' => '<div class="page-links">' . esc_html__('Pages:', 'jcu_alumni'),
-                        'after' => '</div>',
-                    ));
-                    ?>
-                </div><!-- .entry-content -->
-                <footer class="entry-footer">
-                    <?php jcu_alumni_entry_footer(); ?>
-                </footer><!-- .entry-footer -->
-
-                <?php
-                if (!is_active_sidebar('sidebar-1')) : ?>
-            </div><!-- .post-content__body -->
-        </div><!-- .post-content__wrap -->
-    <?php endif; ?>
-        <?php
-        jcu_alumni_post_navigation();
-
-        // If comments are open or we have at least one comment, load up the comment template.
-        if (comments_open() || get_comments_number()) :
-            comments_template();
-        endif;
-        ?>
-    </section><!-- #post content -->
-    <?php
-    get_sidebar();
-    ?>
+                                <?php
+                                if (has_post_thumbnail()) { ?>
+                                    <figure class="featured-image bio-image">
+                                        <?php the_post_thumbnail(); ?>
+                                    </figure><!-- .featured-image bio-image -->
+                                <?php } ?>
+                                <?php
+                                the_content(sprintf(
+                                    wp_kses(
+                                    /* translators: %s: Name of current post. Only visible to screen readers */
+                                        __('Continue reading<span class="screen-reader-text"> "%s"</span>', 'jcu_alumni'),
+                                        array(
+                                            'span' => array(
+                                                'class' => array(),
+                                            ),
+                                        )
+                                    ),
+                                    get_the_title()
+                                ));
+                                ?>
+                            </div><!-- .entry-content -->
+                        </div><!-- .post-content__body -->
+                    </div><!-- .post-content__wrap -->
+            </section><!-- .post-content-bio -->
+        </div><!--.bio-content-wrap-->
+    </div><!--.bio-->
+    <div id="mapShortcode"><?php echo GeoMashup::map('height=400px&width=100%&map_cat=0&zoom=5');?></div>
+    <div class="mobile-navigation"><?php jcu_alumni_post_navigation(); ?></div>
 </article><!-- #post-<?php the_ID(); ?> -->
