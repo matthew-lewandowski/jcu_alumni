@@ -89,6 +89,7 @@
                 </aside><!-- #secondary -->
                 <div id="mapShortcode"><?php echo GeoMashup::map('height=600&width=100%&map_cat=0');?></div>
             </div><!-- .bottom-row__wrap -->
+            <?php get_template_part('template-parts/content', 'highlight');?>
         </div><!-- .post-content__wrap -->
     </section><!-- #post content -->
 </article><!-- #post-<?php the_ID(); ?> -->
