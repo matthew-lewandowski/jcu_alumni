@@ -54,7 +54,6 @@
             </div>
             <section class="post-content-bio">
                 <div class="post-content__wrap">
-                    <div class="entry-meta">
                         <div class="post-content__body">
                             <div class="entry-content">
 
