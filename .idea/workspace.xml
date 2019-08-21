@@ -1,14 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="4bf0d374-dabb-4b12-8557-3dc1cd42891b" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/sass/layout/_global.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/layout/_global.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sass/maps/style.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/sass/maps/style.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sass/site/header/_carousel.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/site/header/_carousel.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/sass/variables-site/_structure.scss" beforeDir="false" afterPath="$PROJECT_DIR$/sass/variables-site/_structure.scss" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/style.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/template-parts/content-highlight.php" beforeDir="false" afterPath="$PROJECT_DIR$/template-parts/content-highlight.php" afterDir="false" />
-    </list>
+    <list default="true" id="4bf0d374-dabb-4b12-8557-3dc1cd42891b" name="Default Changelist" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +13,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/sass/site/header/_carousel.scss">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="731">
-              <caret line="218" column="13" lean-forward="true" selection-start-line="218" selection-start-column="13" selection-end-line="218" selection-end-column="13" />
+            <state relative-caret-position="323">
+              <caret line="207" column="10" lean-forward="true" selection-start-line="207" selection-start-column="10" selection-end-line="207" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -266,12 +259,12 @@
       <workItem from="1565408091776" duration="52954000" />
       <workItem from="1565675394794" duration="36082000" />
       <workItem from="1565831888683" duration="5910000" />
-      <workItem from="1566191489473" duration="41832000" />
+      <workItem from="1566191489473" duration="42788000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="225052000" />
+    <option name="totallyTimeSpent" value="226008000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1187" height="1400" extended-state="0" />
@@ -618,8 +611,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/sass/site/header/_carousel.scss">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="731">
-          <caret line="218" column="13" lean-forward="true" selection-start-line="218" selection-start-column="13" selection-end-line="218" selection-end-column="13" />
+        <state relative-caret-position="323">
+          <caret line="207" column="10" lean-forward="true" selection-start-line="207" selection-start-column="10" selection-end-line="207" selection-end-column="10" />
         </state>
       </provider>
     </entry>
