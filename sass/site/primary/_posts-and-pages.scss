@@ -213,13 +213,11 @@
   }
 
   .bio-content-wrap {
-    //max-width: 40%;
     display: flex;
     flex-direction: column;
 
     .entry-header-bio {
       height: auto;
-      margin: 0 16px 0 0;
       background-color: rgba(blue, 0.8);
 
       h1 {
@@ -240,7 +238,8 @@
     }
 
     .bio-meta {
-      margin: 16px 0 0 16px;
+      padding: 8px 0 8px 0;
+      background-color: $color__sites-grey;
 
       h4 {
         margin: 0 6px 0 16px;
@@ -255,6 +254,7 @@
 }
 .meta-wrap {
   display: flex;
+  margin: 0 16px 0 16px;
 }
 .mobile-navigation {
   display: none;
