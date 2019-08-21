@@ -7,7 +7,7 @@
  */
 $categories = get_categories();
 $id = get_cat_ID("outstanding");
-$args = array('category' => 25, 'post_type' => 'post');
+$args = array('category' => $id, 'post_type' => 'post');
 $posts = get_posts($args);
 $bool = false;
 ?>
@@ -61,7 +61,9 @@ $bool = false;
                 }
                 ?>
 
-            <?php endforeach; ?>
+            <?php endforeach;
+            wp_reset_postdata();
+            ?>
         </div><!-- .carousel-inner -->
         <a class="carousel-control-prev" href="#highlight-carousel" role="button" data-slide="prev">
             <i class="fa fa-chevron-left fa-lg text-muted"></i>
