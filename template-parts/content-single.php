@@ -51,6 +51,7 @@
                 <div class="meta-wrap"><h4>Degree:<h5><?php echo $degree?></h5></h4></div>
                 <div class="meta-wrap"><h4>Year:<h5><?php echo $year?></h5></div>
                 <div class="meta-wrap"><h4>University:<h5><?php echo $university?></h5></h4></div>
+                <div class="meta-wrap"><h6>Updated On <?php echo the_modified_date();?></h6></div>
             </div>
             <section class="post-content-bio">
                 <div class="post-content__wrap">

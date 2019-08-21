@@ -1006,7 +1006,7 @@ a:hover, a:active {
 	padding: 1em;
 }
 
-@media screen and (min-width: 500px) {
+@media screen and (min-width: 450px) {
 	.site-content {
 		padding: 0 2em 0 2em;
 	}
@@ -1270,7 +1270,7 @@ aside#page-secondary {
 	background-color: #fff;
 }
 
-@media screen and (min-width: 374px) {
+@media screen and (min-width: 450px) {
 	.site-header {
 		padding: 1em 2em;
 	}
@@ -1835,7 +1835,7 @@ button.dropdown-toggle {
 	text-decoration: underline;
 }
 
-@media screen and (min-width: 374px) {
+@media screen and (min-width: 450px) {
 	.site-footer {
 		padding: 1em 2em;
 	}
@@ -2064,7 +2064,7 @@ button.dropdown-toggle {
 	overflow: hidden;
 }
 
-@media screen and (min-width: 374px) {
+@media screen and (min-width: 450px) {
 	.full-bleed {
 		margin-left: -2em;
 	}
@@ -2152,6 +2152,12 @@ button.dropdown-toggle {
 
 .bio .bio-content-wrap .bio-meta h5 {
 	font-size: 1.1em;
+}
+
+.bio .bio-content-wrap .bio-meta h6 {
+	font-size: .8em;
+	margin: 0 6px 0 16px;
+	font-style: italic;
 }
 
 .meta-wrap {
@@ -2627,7 +2633,7 @@ button.dropdown-toggle {
 	background-color: #1a1a1a;
 }
 
-@media screen and (min-width: 374px) {
+@media screen and (min-width: 450px) {
 	.footer-widgets {
 		padding: 2em 1em;
 	}
@@ -2847,7 +2853,7 @@ object {
 	margin: .5em 0 1.5em 1em;
 }
 
-@media screen and (min-width: 374px) {
+@media screen and (min-width: 450px) {
 	.wp-caption .wp-caption-text {
 		margin-left: 2em;
 	}
@@ -2868,7 +2874,7 @@ object {
 	margin: 0 -1em;
 }
 
-@media screen and (min-width: 374px) {
+@media screen and (min-width: 450px) {
 	.wp-caption.aligncenter,
 	.centered-image {
 		margin: 0 -2em;
