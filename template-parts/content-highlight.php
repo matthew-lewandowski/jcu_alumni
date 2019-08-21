@@ -11,9 +11,10 @@ $args = array('category' => 25, 'post_type' => 'post');
 $posts = get_posts($args);
 $bool = false;
 ?>
-<div class="top-bar">
-    <h5>Come check out our Outstanding Alumni</h5>
-</div>
+<div class="content-highlight">
+    <div class="top-bar">
+        <h5>Come check out our Outstanding Alumni</h5>
+    </div>
     <div id="highlight-carousel" class="carousel slide w-100" data-ride="carousel">
         <div class="carousel-inner" role="listbox">
             <?php foreach ($posts as $post) : setup_postdata($post);
@@ -32,12 +33,14 @@ $bool = false;
                     ?>
                     <div class="carousel-item active">
                         <div class="carousel-item-wrap">
-                            <img src="<?php the_post_thumbnail_url(); ?>""
-                            alt="<?php echo "Slide " . $count ?>">
-                            <div class="carousel-name">
-                                <h5><?php the_title(); ?></h5>
-                                <p><?php echo $degree?></p>
-                            </div>
+                            <a href="<?php the_permalink(); ?>">
+                                <img src="<?php the_post_thumbnail_url(); ?>""
+                                alt="<?php echo "Slide " . $count ?>">
+                                <div class="carousel-name">
+                                    <h5><?php the_title(); ?></h5>
+                                    <p><?php echo $degree ?></p>
+                                </div>
+                            </a>
                         </div>
                     </div> <?php
                     $bool = true;
@@ -45,12 +48,14 @@ $bool = false;
                     ?>
                     <div class="carousel-item">
                         <div class="carousel-item-wrap">
-                            <img src="<?php the_post_thumbnail_url(); ?>""
-                            alt="<?php echo "Slide " . $count ?>">
-                            <div class="carousel-name">
-                                <h5><?php the_title(); ?></h5>
-                                <p><?php echo $degree?></p>
-                            </div>
+                            <a href="<?php the_permalink(); ?>">
+                                <img src="<?php the_post_thumbnail_url(); ?>""
+                                alt="<?php echo "Slide " . $count ?>">
+                                <div class="carousel-name">
+                                    <h5><?php the_title(); ?></h5>
+                                    <p><?php echo $degree ?></p>
+                                </div>
+                            </a>
                         </div>
                     </div> <?php
                 }
@@ -67,6 +72,7 @@ $bool = false;
             <span class="sr-only">Next</span>
         </a>
     </div><!-- #highlight-carousel -->
-<div class="bottom-bar">
-    <h5>Making a difference in today's world</h5>
-</div>
+    <div class="bottom-bar">
+        <h5>Making a difference in today's world</h5>
+    </div>
+</div><!--.content-highlight -->

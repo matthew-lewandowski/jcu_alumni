@@ -1006,7 +1006,7 @@ a:hover, a:active {
 	padding: 1em;
 }
 
-@media screen and (min-width: 374px) {
+@media screen and (min-width: 500px) {
 	.site-content {
 		padding: 0 2em 0 2em;
 	}
@@ -1670,13 +1670,13 @@ button.dropdown-toggle {
 }
 
 #highlight-carousel .carousel-control-next, #highlight-carousel .carousel-control-prev {
-	display: none;
 	position: absolute;
 	top: 0;
 	bottom: 0;
 	z-index: 2;
 	color: black;
 	opacity: 1;
+	width: 10%;
 }
 
 .carousel-name {
@@ -1726,19 +1726,91 @@ button.dropdown-toggle {
 
 .top-bar {
 	background-color: #e9e9e9;
-	width: 50%;
+	width: 60%;
 	text-align: right;
 	padding: 16px 16px 16px 0;
 	margin: 16px 0 0 0;
 }
 
+.top-bar h5 {
+	margin: 0;
+}
+
 .bottom-bar {
 	background-color: #e9e9e9;
-	width: 50%;
+	width: 60%;
 	float: right;
 	text-align: left;
 	padding: 16px 0 16px 16px;
 	margin: 0 0 16px 0;
+}
+
+.bottom-bar h5 {
+	margin: 0;
+}
+
+@media screen and (max-width: 769px) {
+	.content-highlight {
+		margin-right: -1em;
+		margin-left: -1em;
+	}
+	.top-bar {
+		background-color: #e9e9e9;
+		max-width: 80%;
+		width: auto;
+		text-align: right;
+		font-size: 20px;
+		padding: 8px 8px 8px 0;
+		margin: 16px 0 0 0;
+	}
+	.top-bar h5 {
+		font-size: 20px;
+		font-weight: 300;
+		margin-left: 16px;
+	}
+	.bottom-bar {
+		background-color: #e9e9e9;
+		max-width: 80%;
+		width: auto;
+		float: right;
+		font-size: 20px;
+		text-align: left;
+		padding: 8px 0 8px 8px;
+		margin: 0 0 16px 0;
+	}
+	.bottom-bar h5 {
+		font-size: 20px;
+		font-weight: 300;
+		margin-right: 16px;
+	}
+	#highlight-carousel {
+		margin: 16px 0 16px 0;
+	}
+	#highlight-carousel .carousel-inner .carousel-item-right.active,
+	#highlight-carousel .carousel-inner .carousel-item-next {
+		transform: translateX(99.99%);
+	}
+	#highlight-carousel .carousel-inner .carousel-item-left.active,
+	#highlight-carousel .carousel-inner .carousel-item-prev {
+		transform: translateX(-99.99%);
+	}
+	#highlight-carousel .carousel-inner .carousel-item-right,
+	#highlight-carousel .carousel-inner .carousel-item-left {
+		transform: translateX(0);
+	}
+	#highlight-carousel .carousel-item-next, #highlight-carousel .carousel-item-prev, #highlight-carousel .carousel-item.active {
+		display: -ms-flexbox;
+		display: block;
+		height: 400px;
+		overflow: hidden;
+	}
+	#highlight-carousel img {
+		-o-object-fit: cover;
+		   object-fit: cover;
+	}
+	#highlight-carousel .carousel-item-wrap {
+		padding: 0;
+	}
 }
 
 /*--------------------------------------------------------------
