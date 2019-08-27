@@ -456,7 +456,8 @@ function ajax_search() {
     $query = new WP_Query(
         array(
             'posts_per_page' => 8,
-            's' => $search
+            's' => $search,
+            'post_type' => 'post'
         )
     );
 
