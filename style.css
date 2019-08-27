@@ -610,6 +610,72 @@ td:last-child {
 /*--------------------------------------------------------------
 # Forms
 --------------------------------------------------------------*/
+.results-list {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-direction: column;
+	    flex-direction: column;
+	width: 398px;
+}
+
+.results-list a {
+	text-decoration: none;
+	width: 100%;
+	height: auto;
+	padding: 4px 16px;
+	background-color: white;
+}
+
+.results-list a:hover, .results-list a:focus {
+	text-decoration: none;
+	background-color: #e9e9e9;
+	color: black;
+}
+
+.results {
+	display: block;
+	position: absolute;
+	background: white;
+	border: 1px solid #ccc;
+}
+
+.search_text {
+	padding: .35em 16px 0 0;
+	font-size: 1.2rem;
+}
+
+.search_text h5 {
+	padding: 0;
+	margin: 0;
+}
+
+.search_inner {
+	display: -ms-flexbox;
+	display: flex;
+	-ms-flex-pack: center;
+	    justify-content: center;
+	width: -webkit-fit-content;
+	width: fit-content;
+	margin: 0 auto;
+}
+
+.search-form .search-field {
+	width: 400px;
+}
+
+.search-form button {
+	height: 100%;
+	margin: 0 0 0 8px;
+	padding: 2px 1em;
+	border: none;
+	background-color: #2196F3;
+}
+
+.search-form button i {
+	color: white;
+	font-size: 1.4em;
+}
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -1105,6 +1171,7 @@ a:hover, a:active {
 .single .page .entry-header,
 .no-sidebar .entry-header {
 	text-align: center;
+	padding: 1em;
 }
 
 aside#page-secondary {

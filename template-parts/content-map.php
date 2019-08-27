@@ -11,12 +11,20 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <?php
-        if (is_singular()) :
-            the_title('<h1 class="entry-title">', '</h1>');
-        else :
-            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-        endif; ?>
+<!--        --><?php
+//        if (is_singular()) :
+//            the_title('<h1 class="entry-title">', '</h1>');
+//        else :
+//            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+//        endif; ?>
+        <div class="search-container">
+            <div class="search_inner">
+                <div class="search_text">
+                    <h5>Find an Alumni</h5>
+                </div>
+                <?php get_search_form();?>
+            </div>
+        </div>
     </header><!-- .entry-header -->
 
     <section class="post-content">

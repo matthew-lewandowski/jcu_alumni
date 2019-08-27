@@ -11,7 +11,15 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <?php the_title('<h1 class="entry-title">', '</h1>'); ?>
+<!--        --><?php //the_title('<h1 class="entry-title">', '</h1>'); ?>
+        <div class="search-container">
+            <div class="search_inner">
+                <div class="search_text">
+                    <h5>Find an Alumni</h5>
+                </div>
+                <?php get_search_form();?>
+            </div>
+        </div>
     </header><!-- .entry-header -->
 
     <?php
