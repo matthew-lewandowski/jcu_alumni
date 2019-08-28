@@ -55,7 +55,7 @@
                 </div><!-- .post-content__body -->
             </div><!-- .top-row__wrap -->
             <div class="search_by">
-                <p>Search By<i onclick="searchBarClicked(this)" id="symbol" class="fa fa-bars" aria-hidden="true"></i></p>
+                <p>Filter By<i onclick="searchBarClicked(this)" id="symbol" class="fa fa-bars" aria-hidden="true"></i></p>
             </div>
             <div class="bottom-row__wrap">
                 <aside id="page-secondary" class="widget-area page-sidebar">

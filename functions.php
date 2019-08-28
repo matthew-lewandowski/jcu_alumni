@@ -419,6 +419,12 @@ function be_attachment_field_credit($form_fields, $post)
         'value' => get_post_meta($post->ID, 'be-image-header-color', true),
         'helps' => '1=Red 2=Blue 3=Yellow 4=Orange 5=Green 6=Purple 7=Pink',
     );
+    $form_fields['be-image-header-url'] = array(
+        'label' => 'Link to Page',
+        'input' => 'text',
+        'value' => get_post_meta($post->ID, 'be-image-header-url', true),
+        'helps' => 'paste the url (slug) to link a page',
+    );
 
     return $form_fields;
 }
@@ -426,7 +432,7 @@ function be_attachment_field_credit($form_fields, $post)
 add_filter('attachment_fields_to_edit', 'be_attachment_field_credit', 10, 2);
 
 /**
- * Save values of Photographer Name and URL in media uploader
+ * Save values of header images to be used for the header carousel
  *
  * @param $post array, the post data for database
  * @param $attachment array, attachment fields from $_POST form
@@ -443,6 +449,8 @@ function be_attachment_field_credit_save($post, $attachment)
         update_post_meta($post[ 'ID' ], 'be-image-header-pos', $attachment[ 'be-image-header-pos' ]);
     if (isset($attachment['be-image-header-color']))
         update_post_meta($post[ 'ID' ], 'be-image-header-color', $attachment[ 'be-image-header-color' ]);
+    if (isset($attachment['be-image-header-url']))
+        update_post_meta($post[ 'ID' ], 'be-image-header-url', $attachment[ 'be-image-header-url' ]);
     return $post;
 }
 
@@ -496,3 +504,15 @@ function ajax_search() {
    the search to work for both logged in and logged out users. */
 add_action( 'wp_ajax_ajax_search', 'ajax_search' );
 add_action( 'wp_ajax_nopriv_ajax_search', 'ajax_search' );
+
+/* this will echo the url for server name
+*/
+function url(){
+    return sprintf(
+        "%s://%s%s",
+        isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+        $_SERVER['SERVER_NAME'],
+        $_SERVER['REQUEST_URI']
+    );
+}
+

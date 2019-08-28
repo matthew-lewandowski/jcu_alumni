@@ -282,6 +282,7 @@
     .bio-content-wrap {
       .entry-header-bio {
         text-align: center;
+        margin: 0 -1em;
         h1 {
           font-size: 1.4em;
           margin: 8px 0 8px 0;
@@ -300,7 +301,7 @@
       }
 
       .bio-meta {
-        margin: 16px 0 0 0;
+        margin: 16px -1em 0 -1em;
       }
     }
   }
