@@ -20,7 +20,7 @@ jQuery(document).ready( function($) {
             timeout = setTimeout(later, wait);
             if (callNow) func.apply(context, args);
         };
-    };
+    }
 
     // Add results container and disable autocomplete on search field
     $searchWrap.append('<div class="results"></div>');
@@ -33,6 +33,7 @@ jQuery(document).ready( function($) {
 
         // If the search field is not empty, perform the search function
         if( $searchField.val() !== "" ) {
+            $searchResults.attr('style', 'display: block');
             termExists = true;
             doSearch();
         } else {
@@ -44,10 +45,15 @@ jQuery(document).ready( function($) {
 
     //when the search field is not in focus the field is not displayed
     $($searchField).focusout(function () {
-        $searchResults.attr('style', 'display: none');
+        setTimeout(function () {
+            $searchResults.attr('style', 'display: none');
+        },200);
     });
+
     $($searchField).focusin(function () {
-        $searchResults.attr('style', 'display: block');
+        if ($searchField.val() !== "") {
+            $searchResults.attr('style', 'display: block');
+        }
     });
 
     // Make search Ajax request every 200 milliseconds, output results

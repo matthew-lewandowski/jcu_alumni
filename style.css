@@ -676,6 +676,45 @@ td:last-child {
 	font-size: 1.4em;
 }
 
+@media screen and (max-width: 769px) {
+	.results-list {
+		width: 100%;
+	}
+	.results-list a {
+		text-align: left;
+	}
+	.results {
+		margin: 5px auto;
+		display: none;
+		right: 8%;
+		left: 8%;
+	}
+	.search_text {
+		max-width: 100%;
+	}
+	.search_text h5 {
+		font-size: 20px;
+	}
+	.search_inner {
+		-ms-flex-direction: column;
+		    flex-direction: column;
+		-ms-flex-pack: center;
+		    justify-content: center;
+		width: auto;
+	}
+	.search-form {
+		max-width: 100%;
+	}
+	.search-form .search-field {
+		max-width: 75%;
+	}
+	.search-form button {
+		max-width: 20%;
+		height: auto;
+		margin: 0;
+	}
+}
+
 button,
 input[type="button"],
 input[type="reset"],
@@ -1184,6 +1223,7 @@ aside#page-secondary {
 }
 
 .search_by {
+	min-width: 250px;
 	position: relative;
 	font-size: 20px;
 	font-weight: bold;
@@ -2238,6 +2278,10 @@ button.dropdown-toggle {
 }
 
 @media screen and (max-width: 769px) {
+	.single .page .entry-header, .no-sidebar .entry-header {
+		text-align: center;
+		padding: .5em .5em 1em .5em;
+	}
 	.bio {
 		-ms-flex-wrap: wrap;
 		    flex-wrap: wrap;

@@ -5,7 +5,7 @@
  */
 function clickedChild(i) {
     var category = i.children[1].innerText;
-    let itemsArray;
+    var itemsArray;
 
 
     if (localStorage.getItem('items')) {
@@ -102,19 +102,19 @@ function clickedParent(i) {
     var symbol = i.parentElement.children[0];
     
     if (!child.classList.contains("show")) {
-        for (var i = 0; i < parents.length; i++) {
-            parents[i].children[2].classList.remove("show");
-            parents[i].children[0].classList.remove("fa-minus");
-            parents[i].children[0].classList.add("fa-plus");
+        for (var x = 0; x < parents.length; x++) {
+            parents[x].children[2].classList.remove("show");
+            parents[x].children[0].classList.remove("fa-minus");
+            parents[x].children[0].classList.add("fa-plus");
         }
         child.classList.add("show");
-        symbol.classList.remove("fa-plus")
-        symbol.classList.add("fa-minus")
+        symbol.classList.remove("fa-plus");
+        symbol.classList.add("fa-minus");
 
     } else {
         child.classList.remove("show");
-        symbol.classList.remove("fa-minus")
-        symbol.classList.add("fa-plus")
+        symbol.classList.remove("fa-minus");
+        symbol.classList.add("fa-plus");
     }
 
 }

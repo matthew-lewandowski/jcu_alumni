@@ -53,6 +53,44 @@
     }
   }
 }
+@media screen and (max-width: $query_medium) {
+  .results-list{
+    width: 100%;
+    a{
+      text-align: left;
+    }
+  }
+  .results {
+    margin: 5px auto;
+    display: none;
+    right: 8%;
+    left: 8%;
+  }
+  .search_text {
+    max-width: 100%;
+    h5{
+      font-size: 20px;
+    }
+  }
+  .search_inner{
+    flex-direction: column;
+    justify-content: center;
+    width: auto;
+  }
+  .search-form{
+    max-width: 100%;
+    .search-field{
+      max-width: 75%;
+    }
+    button{
+      max-width: 20%;
+      height: auto;
+      margin: 0;
+    }
+  }
+}
+
+
 
 @import "buttons";
 
