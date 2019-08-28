@@ -203,11 +203,11 @@
   .featured-image {
     flex-wrap: wrap;
     max-width: 60%;
-    min-width: 30%;
+    min-width: 50%;
     overflow: hidden;
 
     img {
-      max-height: 500px;
+      max-height: 700px;
       object-fit: cover;
     }
   }

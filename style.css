@@ -637,6 +637,7 @@ td:last-child {
 	position: absolute;
 	background: white;
 	border: 1px solid #ccc;
+	z-index: 9999999;
 }
 
 .search_text {
@@ -2214,12 +2215,12 @@ button.dropdown-toggle {
 	-ms-flex-wrap: wrap;
 	    flex-wrap: wrap;
 	max-width: 60%;
-	min-width: 30%;
+	min-width: 50%;
 	overflow: hidden;
 }
 
 .bio .featured-image img {
-	max-height: 500px;
+	max-height: 700px;
 	-o-object-fit: cover;
 	   object-fit: cover;
 }
