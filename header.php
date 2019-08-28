@@ -69,7 +69,6 @@
             </div><!-- #site-header__container -->
         </div><!-- #site-header-restrainer -->
     </header><!-- #masthead -->
-    <div class="spacer"></div><!-- #spacer -->
 <!--    --><?php //if (get_header_image() && is_front_page()) : //this will only display header image on front page ?>
     <?php if (get_header_image()) : //this will only display header image ?>
         <figure class="header-image">

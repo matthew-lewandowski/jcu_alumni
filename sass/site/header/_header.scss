@@ -6,17 +6,19 @@
   font-family: $font__open_sans;
   color: $color__text;
   background-color: $color__background-header;
-
+  padding: 1em 2em;
   @media screen and (min-width: $query_small) {
     padding: 1em 2em;
   }
 }
-.site-header-restrainer{
+
+.site-header-restrainer {
   max-width: $query_large;
   margin: 0 auto;
   position: relative;
 }
-.site-header__container{
+
+.site-header__container {
   width: 100%;
   display: flex;
   flex-wrap: wrap;
@@ -31,13 +33,15 @@
 
 .custom-logo-link {
   margin-right: 1em;
+
   img {
     display: block;
     height: 85px;
     width: auto;
   }
 }
-.site-branding__text{
+
+.site-branding__text {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -75,10 +79,6 @@
   justify-content: center;
 }
 
-.spacer {
-  background-color: #ffffff;
-  height: 30px;
-}
 /*
 Header Menu
  */

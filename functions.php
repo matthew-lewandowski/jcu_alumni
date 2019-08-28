@@ -237,6 +237,8 @@ function jcu_alumni_scripts()
 
     wp_enqueue_script('jcu_alumni-functions', get_template_directory_uri() . '/js/functions.js', array('jquery'), '20190709', true);
 
+    wp_enqueue_script('jcu_alumni-ajax-search', get_template_directory_uri() . '/js/ajax-search.js', array('jquery'), '20190709', true);
+
     wp_enqueue_script('jcu_alumni-map-widget', get_template_directory_uri() . '/js/map-widget.js', array('jquery'), '20190731', true);
 
     wp_localize_script('jcu_alumni-navigation', 'jcu_alumniScreenReaderText', array(
@@ -417,6 +419,12 @@ function be_attachment_field_credit($form_fields, $post)
         'value' => get_post_meta($post->ID, 'be-image-header-color', true),
         'helps' => '1=Red 2=Blue 3=Yellow 4=Orange 5=Green 6=Purple 7=Pink',
     );
+    $form_fields['be-image-header-url'] = array(
+        'label' => 'Link to Page',
+        'input' => 'text',
+        'value' => get_post_meta($post->ID, 'be-image-header-url', true),
+        'helps' => 'paste the url (slug) to link a page',
+    );
 
     return $form_fields;
 }
@@ -424,7 +432,7 @@ function be_attachment_field_credit($form_fields, $post)
 add_filter('attachment_fields_to_edit', 'be_attachment_field_credit', 10, 2);
 
 /**
- * Save values of Photographer Name and URL in media uploader
+ * Save values of header images to be used for the header carousel
  *
  * @param $post array, the post data for database
  * @param $attachment array, attachment fields from $_POST form
@@ -441,7 +449,70 @@ function be_attachment_field_credit_save($post, $attachment)
         update_post_meta($post[ 'ID' ], 'be-image-header-pos', $attachment[ 'be-image-header-pos' ]);
     if (isset($attachment['be-image-header-color']))
         update_post_meta($post[ 'ID' ], 'be-image-header-color', $attachment[ 'be-image-header-color' ]);
+    if (isset($attachment['be-image-header-url']))
+        update_post_meta($post[ 'ID' ], 'be-image-header-url', $attachment[ 'be-image-header-url' ]);
     return $post;
 }
 
 add_filter('attachment_fields_to_save', 'be_attachment_field_credit_save', 10, 2);
+
+function ajax_search() {
+    // Get search term from search field
+    $search = sanitize_text_field( $_POST[ 'query' ] );
+
+    // Set up query using search string, limit to 8 results
+    $query = new WP_Query(
+        array(
+            'posts_per_page' => 8,
+            's' => $search,
+            'post_type' => 'post'
+        )
+    );
+
+    $output = '';
+
+    // Run search query
+    if ( $query->have_posts() ) {
+        while ( $query->have_posts() ) : $query->the_post();
+
+            /* Output a link to each result
+               This is where the post thumbnail, excerpt, or anything else could be added */
+            echo '<a href="' . get_permalink() . '">' . get_the_title() . '</a>';
+
+        endwhile;
+
+        // If there is more than one page of results, add link to the full results page
+        if ( $query->max_num_pages > 1 ) {
+            // We use urlencode() here to handle any spaces or odd characters in the search string
+            echo '<a class="see-all-results" href="' . get_site_url() . '?s=' . urlencode( $search ) . '">View all results</a>';
+        }
+
+    } else {
+
+        // There are no results, output a message
+        echo '<p class="no-results">No results</p>';
+
+    }
+
+    // Reset query
+    wp_reset_query();
+
+    die();
+}
+
+/* We need to hook into both wp_ajax and wp_ajax_nopriv_ in order for
+   the search to work for both logged in and logged out users. */
+add_action( 'wp_ajax_ajax_search', 'ajax_search' );
+add_action( 'wp_ajax_nopriv_ajax_search', 'ajax_search' );
+
+/* this will echo the url for server name
+*/
+function url(){
+    return sprintf(
+        "%s://%s%s",
+        isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] != 'off' ? 'https' : 'http',
+        $_SERVER['SERVER_NAME'],
+        $_SERVER['REQUEST_URI']
+    );
+}
+

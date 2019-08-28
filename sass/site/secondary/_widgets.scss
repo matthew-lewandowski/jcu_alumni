@@ -286,11 +286,11 @@
     padding: 8px 16px 8px 16px;
     margin: 0;
     font-size: 20px;
-    font-weight: bold;
+    font-weight: 500;
   }
 
   i {
-    padding: 12px 16px 8px 16px;
+    padding: 16px 16px 8px 16px;
     margin: 0;
   }
 
@@ -342,7 +342,6 @@
     transition: width 1s ease;
   }
 }
-
 .darken {
   background-color: darken($color__sites-grey, 30%) !important;
 }

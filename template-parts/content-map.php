@@ -11,12 +11,20 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
     <header class="entry-header">
-        <?php
-        if (is_singular()) :
-            the_title('<h1 class="entry-title">', '</h1>');
-        else :
-            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
-        endif; ?>
+<!--        --><?php
+//        if (is_singular()) :
+//            the_title('<h1 class="entry-title">', '</h1>');
+//        else :
+//            the_title('<h2 class="entry-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h2>');
+//        endif; ?>
+        <div class="search-container">
+            <div class="search_inner">
+                <div class="search_text">
+                    <h5>Find an Alumni</h5>
+                </div>
+                <?php get_search_form();?>
+            </div>
+        </div>
     </header><!-- .entry-header -->
 
     <section class="post-content">
@@ -47,7 +55,7 @@
                 </div><!-- .post-content__body -->
             </div><!-- .top-row__wrap -->
             <div class="search_by">
-                <p>Search By<i onclick="searchBarClicked(this)" id="symbol" class="fa fa-bars" aria-hidden="true"></i></p>
+                <p>Filter By<i onclick="searchBarClicked(this)" id="symbol" class="fa fa-bars" aria-hidden="true"></i></p>
             </div>
             <div class="bottom-row__wrap">
                 <aside id="page-secondary" class="widget-area page-sidebar">

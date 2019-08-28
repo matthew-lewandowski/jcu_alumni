@@ -18,7 +18,7 @@
 
     $('#highlight-carousel').carousel({
         interval: 7000
-    })
+    });
 
     $('#highlight-carousel.carousel .carousel-item').each(function(){
         var next = $(this).next();
