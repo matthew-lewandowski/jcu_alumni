@@ -1,5 +1,5 @@
 .archive-view {
-  background-color: #eee;
+  background-color: white;
 
   .post,
   .page {
@@ -23,6 +23,7 @@
         width: 100%;
         flex: 1 0 100%;
       }
+
       .content-area {
         width: $size__ratio-large;
       }
@@ -62,6 +63,7 @@
   input[type="search"] {
     padding: .5em;
   }
+
   input[type="submit"] {
     border-color: white;
     color: white;
@@ -117,8 +119,61 @@
     &:focus,
     &:hover {
       color: white;
-      background: $color__interactive;
+      background: $color__sites-light-blue;
+      text-decoration: none;
     }
   }
 
 }
+.archive-header{
+  text-align: center;
+  h1{
+
+}
+}
+.archive__wrap {
+  display: flex;
+  flex-wrap: wrap;
+
+  .archive__inner {
+    width: 48%;
+    min-width: 48%;
+    margin: 1%;
+    background-color: $color__sites-grey;
+  }
+
+  .archive__title {
+    padding: 0 2em 0;
+    text-align: center;
+  }
+
+  .post__content {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0 1em 1em;
+
+    .entry-header-archive {
+      width: 40%;
+
+      .index-image img {
+        max-height: 220px;
+        object-fit: cover;
+        height: fit-content;
+      }
+    }
+
+    .entry-content {
+      width: 50%;
+      margin: 0 16px 0 16px;
+
+    }
+
+    .continue-reading {
+      width: 100%;
+      position: inherit;
+      text-align: center;
+    }
+  }
+}
+
+

@@ -47,7 +47,8 @@
 
     &:focus,
     &:hover {
-      border-bottom: 5px solid $color__interactive;
+      text-decoration: none;
+      color: $color__sites-light-blue;
     }
   }
 }
@@ -301,7 +302,7 @@
       }
 
       .bio-meta {
-        margin: 16px -1em 0 -1em;
+        margin: 0 -1em 0 -1em;
       }
     }
   }

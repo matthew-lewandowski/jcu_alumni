@@ -1,5 +1,5 @@
 .carousel-caption-header {
-  background-color: rgba(blue, 0.8);
+  background-color: rgba($color__sites-light-blue, 0.9);
   width: auto;
   max-width: 50%;
   height: auto;
@@ -66,7 +66,7 @@
 }
 
 .color-2 {
-  background-color: rgba(blue, 0.7);
+  background-color: rgba($color__sites-light-blue, 0.9);
 }
 
 .color-3 {
@@ -170,7 +170,7 @@
   position: absolute;
   right: 8px;
   bottom: 15px;
-  background: rgba(blue, .7);
+  background: rgba($color__sites-light-blue, .9);
   white-space: nowrap;
   padding: 4px 0 4px 0;
   color: white;

@@ -128,3 +128,14 @@
     color: $color__interactive;
   }
 }
+.pagination {
+  margin: 0 auto;
+  a:hover, a:focus {
+    background-color: $color__sites-light-blue;
+    text-decoration: none;
+  }
+  .current {
+    color: black;
+  }
+}
+

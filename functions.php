@@ -90,20 +90,21 @@ endif;
 add_action('after_setup_theme', 'jcu_alumni_setup');
 
 /**
- * Filter the except length to 20 words.
- *
- * @param int $length Excerpt length.
- * @return int (Maybe) modified excerpt length.
+ * Functions that change the excerpt. applied as filters
  */
 function wpdocs_custom_excerpt_length_twenty( $length ) {
     return 15;
 }
-/**
- * Filter the "read more" excerpt string link to the post.
- *
- * @param string $more "Read more" excerpt string.
- * @return string (Maybe) modified "read more" excerpt string.
- */
+function wpdocs_custom_excerpt_length_fifty( $length ) {
+    return 40;
+}
+function change_and_link_excerpt($more){
+    if (is_admin()){
+        return $more;
+    }
+    return '...';
+}
+
 
 /**
  * creates font url from google, this way it is not language dependent.
