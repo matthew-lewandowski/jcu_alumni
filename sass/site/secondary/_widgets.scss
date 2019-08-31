@@ -3,7 +3,6 @@
 }
 
 .widget {
-  margin: 0 0 2em;
   padding: 0 0 2em;
   font-family: $font__open_sans;
 
@@ -35,7 +34,7 @@
 
     &:hover,
     &:focus {
-      border-bottom: 3px solid $color__interactive;
+      text-decoration: none;
     }
   }
 
