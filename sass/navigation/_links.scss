@@ -25,11 +25,10 @@ a {
 	
 	a {
 		text-decoration: none;
-		border-bottom: 3px solid $color__interactive;
 		
 		&:focus,
 		&:hover {
-			color: $color__interactive;
+			color: $color__sites-light-blue;
 		}
 	}
 }

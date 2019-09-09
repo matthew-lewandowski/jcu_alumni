@@ -13,7 +13,14 @@ get_header(); ?>
 if (have_posts()) : ?>
 
     <header class="archive-header">
-        <h1 class="page-title"><?php printf(esc_html__('Search Results for: %s', 'jcu_alumni'), '<span>' . get_search_query() . '</span>'); ?></h1>
+        <div class="search-container">
+            <div class="search_inner">
+                <div class="search_text">
+                    <h5>Search Results for</h5>
+                </div>
+                <?php get_search_form(); ?>
+            </div>
+        </div>
     </header><!-- .archive-header -->
 
 <?php
@@ -26,6 +33,7 @@ endif; ?>
 
     <section id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
+
             <div class="archive__wrap">
                 <?php
                 /* Start the Loop */
@@ -33,11 +41,11 @@ endif; ?>
                 skips anything that is not. If pages ever need to be displayed this needs to be rewritten.
                 */
                 while (have_posts()) : the_post();
-                if (get_post_type() === 'post'){
-                    get_template_part('template-parts/content');
-                } else {
-                    continue;
-                }
+                    if (get_post_type() === 'post') {
+                        get_template_part('template-parts/content');
+                    } else {
+                        continue;
+                    }
 
                     /**
                      * Run the loop for the search to output the results.
@@ -46,17 +54,17 @@ endif; ?>
                      */
 
 
-                endwhile;
-
-                the_posts_pagination(array(
-                    'prev_text' => __('Newer', 'jcu_alumni'),
-                    'next_text' => __('Older', 'jcu_alumni'),
-                    'before_page_number' => '<span class="screen-reader-text">' . __('Page ', 'jcu_alumni') . '</span>',
-                ));
-
-                ?>
+                endwhile; ?>
 
             </div><!-- .archive__wrap -->
+            <?php
+            the_posts_pagination(array(
+                'prev_text' => __('Newer', 'jcu_alumni'),
+                'next_text' => __('Older', 'jcu_alumni'),
+                'before_page_number' => '<span class="screen-reader-text">' . __('Page ', 'jcu_alumni') . '</span>',
+            ));
+
+            ?>
         </main><!-- #main -->
     </section><!-- #primary -->
 
