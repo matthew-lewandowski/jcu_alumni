@@ -184,9 +184,34 @@
   }
 }
 
+.secondary-title {
+  text-align: center;
+}
+.no-results-title {
+  color: $color__interactive;
+  text-align: center;
+  padding: 1em .3em .3em .3em;
+  background-color: #e9e9e9;
+  margin: -1% 1% 1% 1%;
+  p{
+    margin-bottom: 0;
+    font-size: 1.25rem;
+  }
+}
 @media screen and (max-width: $query_medium) {
+  .secondary-title {
+    font-size: 1.5rem;
+    margin: .5em;
+  }
+  .no-results-title {
+    margin: 0;
+    p{
+      font-size: 1rem;
+    }
+  }
   .archive-header {
     margin: 0;
+    padding: 0 1em 1em 1em;
   }
   .archive__wrap {
     display: block;
@@ -206,4 +231,5 @@
     }
   }
 }
+
 
